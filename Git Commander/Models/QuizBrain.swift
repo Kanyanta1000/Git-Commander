@@ -8,7 +8,7 @@
 import Foundation
 
 struct QuizBrain {
-    let quiz = [
+    let gitBasics = [
         Question(q: "Create empty Git repo in specified directory <directory>. Run with no arguments to initialize the current directory as a git repository.", a: "init", a2: "<directory>"),
         Question(q: "Clone repo located at <repo> onto local machine. Original repo can be located on the local filesystem or on a remote machine via HTTP or SSH.", a: "clone", a2: "<repo>"),
         Question(q: "Define author name to be used for all commits in current repo. Devs commonly use --global flag to set config options for current user.", a: "config user.name", a2: "<name>"),
@@ -23,7 +23,7 @@ struct QuizBrain {
     var score = 0
     
     mutating func checkAnswer(_ userAnswer: String) -> Bool {
-        if quiz[questionNumber].answer == userAnswer {
+        if gitBasics[questionNumber].answer == userAnswer {
             score += 1
             return true
         } else {
@@ -32,7 +32,7 @@ struct QuizBrain {
     }
     
     mutating func incrementQuestionNumber() {
-        if questionNumber < quiz.count - 1 {
+        if questionNumber < gitBasics.count - 1 {
             questionNumber += 1
         } else {
             questionNumber = 0
@@ -42,7 +42,7 @@ struct QuizBrain {
     
     func getHint() -> String {
         
-        return quiz[questionNumber].answer
+        return gitBasics[questionNumber].answer
     }
     
     func getScore() -> Int {
@@ -50,15 +50,15 @@ struct QuizBrain {
     }
     
     func getQuestionText() -> String {
-        return quiz[questionNumber].text
+        return gitBasics[questionNumber].text
     }
     
     func getSecondaryArgument() -> String {
-        return quiz[questionNumber].secondaryArgument ?? ""
+        return gitBasics[questionNumber].secondaryArgument ?? ""
     }
     
     func getProgress() -> Float {
-        return Float(questionNumber + 1)/Float(quiz.count)
+        return Float(questionNumber + 1)/Float(gitBasics.count)
     }
     
 }
