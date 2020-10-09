@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2zl-5M-6DB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Git_Commander" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rwz-Jd-51y">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="OUL-tC-e2y">
+                                        <rect key="frame" x="146" y="0.0" width="122.5" height="27.5"/>
+                                    </pageControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSx-mH-8aw">
+                                        <rect key="frame" x="20" y="126" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="Text and Icons"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="z4D-oD-vAj">
+                                        <rect key="frame" x="30" y="245" width="354" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="git" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8j8-r3-i47">
+                                                <rect key="frame" x="0.0" y="0.0" width="31" height="50"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                                <color key="textColor" name="Text and Icons"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="7Eo-lN-FAm">
+                                                <rect key="frame" x="41" y="0.0" width="251.5" height="50"/>
+                                                <color key="backgroundColor" name="Light Primary Color"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vO-DQ-jWe">
+                                                <rect key="frame" x="302.5" y="0.0" width="51.5" height="50"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                                <color key="textColor" name="Text and Icons"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H39-Do-O3W">
+                                        <rect key="frame" x="158" y="394" width="98" height="30"/>
+                                        <color key="backgroundColor" name="Accent Color"/>
+                                        <state key="normal" title="Next Question">
+                                            <color key="titleColor" name="Text and Icons"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nextQuestionPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bCs-nq-0YA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkK-nD-JG1">
+                                        <rect key="frame" x="192" y="522.5" width="30" height="30"/>
+                                        <state key="normal" title="Hint">
+                                            <color key="titleColor" name="Text and Icons"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="hintPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aeq-zt-T1V"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1R-s7-6Lv">
+                                        <rect key="frame" x="186.5" y="651" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="Text and Icons"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZWC-u3-Kgl">
+                                        <rect key="frame" x="132" y="770" width="150" height="4"/>
+                                        <color key="progressTintColor" name="Accent Color"/>
+                                        <color key="trackTintColor" name="Primary Color"/>
+                                    </progressView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="GSx-mH-8aw" secondAttribute="trailing" constant="20" id="5XJ-OZ-fxZ"/>
+                                    <constraint firstItem="GSx-mH-8aw" firstAttribute="leading" secondItem="Rwz-Jd-51y" secondAttribute="leading" constant="20" id="Iz8-Bf-TN8"/>
+                                    <constraint firstAttribute="trailing" secondItem="z4D-oD-vAj" secondAttribute="trailing" constant="30" id="J1D-3f-9lr"/>
+                                    <constraint firstItem="z4D-oD-vAj" firstAttribute="leading" secondItem="Rwz-Jd-51y" secondAttribute="leading" constant="30" id="VBd-lk-qJV"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="Primary Color"/>
+                        <constraints>
+                            <constraint firstItem="Rwz-Jd-51y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BSM-eI-R2Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Rwz-Jd-51y" secondAttribute="bottom" id="ISZ-pZ-uln"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rwz-Jd-51y" secondAttribute="trailing" id="LRY-Au-erf"/>
+                            <constraint firstItem="Rwz-Jd-51y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XWr-iv-NhW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LyF-NQ-6GD"/>
+                    <connections>
+                        <outlet property="answerTextField" destination="7Eo-lN-FAm" id="Qkv-8G-2XD"/>
+                        <outlet property="nextQuestionButton" destination="H39-Do-O3W" id="OfV-Ad-hv7"/>
+                        <outlet property="progressBar" destination="ZWC-u3-Kgl" id="fMu-fz-ygv"/>
+                        <outlet property="questionLabel" destination="GSx-mH-8aw" id="RyW-CF-EZm"/>
+                        <outlet property="scoreLabel" destination="O1R-s7-6Lv" id="qSL-Cu-OSi"/>
+                        <outlet property="secondaryArgLabel" destination="6vO-DQ-jWe" id="nnu-Il-cfY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="93.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="utx-Ld-448">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2zl-5M-6DB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ja9-IR-inW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="Dark Primary Color"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="Primary Text "/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vzv-y2-3gm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hsS-kI-MpD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Accent Color">
+            <color red="0.32549019607843138" green="0.42745098039215684" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Dark Primary Color">
+            <color red="0.29800000786781311" green="0.18299999833106995" blue="0.63499999046325684" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Light Primary Color">
+            <color red="0.81960784313725488" green="0.7686274509803922" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary Color">
+            <color red="0.40392156862745099" green="0.22745098039215686" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary Text ">
+            <color red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Text and Icons">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
