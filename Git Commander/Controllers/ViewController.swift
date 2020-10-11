@@ -16,10 +16,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondaryArgLabel: UILabel!
     
     var quizBrain = QuizBrain()
+    var quizTitle: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(quizTitle)
         updateUI()
     }
     
