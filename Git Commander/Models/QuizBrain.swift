@@ -31,7 +31,11 @@ struct QuizBrain {
         }
     }
     
-
+    mutating func setQuiz(topic: String?) {
+        if let selectedTopic = topic {
+            quiz = quizBank().quizes[selectedTopic] ?? [Question]()
+        }
+    }
     
     func getHint() -> String {
         

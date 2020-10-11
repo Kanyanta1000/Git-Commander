@@ -16,11 +16,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondaryArgLabel: UILabel!
     
     var quizBrain = QuizBrain()
-    var quizTitle: String?
+    var quizTitle: String? {
+        didSet {
+            quizBrain.setQuiz(topic: quizTitle)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(quizTitle)
+
         updateUI()
     }
     
