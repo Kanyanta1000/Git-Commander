@@ -18,6 +18,7 @@
 		EC4D261D252523C500A2BA57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4D261B252523C500A2BA57 /* LaunchScreen.storyboard */; };
 		EC4D262625252ABA00A2BA57 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4D262525252ABA00A2BA57 /* Theme.xcassets */; };
 		EC5C28862530A3D90040388B /* TopicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5C28852530A3D90040388B /* TopicTableViewController.swift */; };
+		EC9210422535CCCD006B10C8 /* CustomViews in Resources */ = {isa = PBXBuildFile; fileRef = EC9210412535CCCD006B10C8 /* CustomViews */; };
 		ECA69D7B2532178B00F53ABF /* QuizBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA69D7A2532178B00F53ABF /* QuizBank.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		EC4D261E252523C500A2BA57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC4D262525252ABA00A2BA57 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
 		EC5C28852530A3D90040388B /* TopicTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTableViewController.swift; sourceTree = "<group>"; };
+		EC9210412535CCCD006B10C8 /* CustomViews */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CustomViews; sourceTree = "<group>"; };
 		ECA69D7A2532178B00F53ABF /* QuizBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBank.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +64,7 @@
 		EC198FAF2525339D006C34FF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EC9210412535CCCD006B10C8 /* CustomViews */,
 				EC4D2616252523C400A2BA57 /* Main.storyboard */,
 			);
 			path = Views;
@@ -166,6 +169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC9210422535CCCD006B10C8 /* CustomViews in Resources */,
 				EC4D261D252523C500A2BA57 /* LaunchScreen.storyboard in Resources */,
 				EC4D262625252ABA00A2BA57 /* Theme.xcassets in Resources */,
 				EC4D261A252523C500A2BA57 /* Assets.xcassets in Resources */,
