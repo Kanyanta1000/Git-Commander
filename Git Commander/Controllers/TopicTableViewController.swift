@@ -20,8 +20,9 @@ class TopicTableViewController: UITableViewController {
     //    MARK: - TableView Datasource Methods
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TopicCell", for: indexPath)
-        let quizTopics = Array(myQuizes.keys)
-        cell.textLabel?.text = quizTopics[indexPath.row]
+        
+        
+        cell.textLabel?.text = myQuizes[indexPath.row].title
         
         cell.accessoryType = .disclosureIndicator
         

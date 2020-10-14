@@ -9,12 +9,12 @@ import Foundation
 
 struct QuizBrain {
     
-    var quiz = quizBank().quizes["Git Basics"]!
+    var quiz = quizBank().quizes[0]
     var questionNumber = 0
     var score = 0
     
     mutating func checkAnswer(_ userAnswer: String) -> Bool {
-        if quiz[questionNumber].answer == userAnswer {
+        if quiz.questions[questionNumber].answer == userAnswer {
             score += 1
             return true
         } else {
@@ -23,7 +23,7 @@ struct QuizBrain {
     }
     
     mutating func incrementQuestionNumber() {
-        if questionNumber < quiz.count - 1 {
+        if questionNumber < quiz.questions.count - 1 {
             questionNumber += 1
         } else {
             questionNumber = 0
@@ -32,14 +32,14 @@ struct QuizBrain {
     }
     
     mutating func setQuiz(topic: String?) {
-        if let selectedTopic = topic {
-            quiz = quizBank().quizes[selectedTopic] ?? [Question]()
+        if topic != nil {
+            quiz = quizBank().quizes.first { $0.title == topic}!
+
         }
     }
     
     func getHint() -> String {
-        
-        return quiz[questionNumber].answer
+        return quiz.questions[questionNumber].answer
     }
     
     func getScore() -> Int {
@@ -47,14 +47,14 @@ struct QuizBrain {
     }
     
     func getQuestionText() -> String {
-        return quiz[questionNumber].text
+        return quiz.questions[questionNumber].text
     }
     
     func getSecondaryArgument() -> String {
-        return quiz[questionNumber].secondaryArgument ?? ""
+        return quiz.questions[questionNumber].secondaryArgument ?? ""
     }
     
     func getProgress() -> Float {
-        return Float(questionNumber + 1)/Float(quiz.count)
+        return Float(questionNumber + 1)/Float(quiz.questions.count)
     }
 }
