@@ -19,12 +19,11 @@ class TopicTableViewController: UITableViewController {
     
     //    MARK: - TableView Datasource Methods
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TopicCell", for: indexPath)
+        let quiz = myQuizes[indexPath.row]
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.quizCellIdentifier, for: indexPath) as! QuizCell
         
-        cell.textLabel?.text = myQuizes[indexPath.row].title
-        
-        cell.accessoryType = .disclosureIndicator
+        cell.setQuizDetails(quiz: quiz)
         
         return cell
     }
@@ -39,7 +38,7 @@ class TopicTableViewController: UITableViewController {
         let cell = self.tableView.cellForRow(at: indexPath)
         quizTopic = cell?.textLabel?.text
         
-        performSegue(withIdentifier: "goToQuestion", sender: self)
+        performSegue(withIdentifier: K.goToQuestion, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,8 +46,6 @@ class TopicTableViewController: UITableViewController {
         
         destinationVC.quizTitle = quizTopic
     }
-    
-    //    MARK: - TableView Data Manipulation Methods
     
     
 }

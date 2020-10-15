@@ -11,6 +11,8 @@
 		EC198FB625253514006C34FF /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC198FB525253513006C34FF /* QuizBrain.swift */; };
 		EC2B1DB4252E5DBC0039EB5F /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B1DB3252E5DBC0039EB5F /* UIButtonExtension.swift */; };
 		EC312C7725379C6D00CCE885 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC312C7625379C6D00CCE885 /* Quiz.swift */; };
+		EC312C7B25385EB600CCE885 /* QuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC312C7A25385EB600CCE885 /* QuizCell.swift */; };
+		EC312C80253863ED00CCE885 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC312C7F253863ED00CCE885 /* K.swift */; };
 		EC4D2611252523C400A2BA57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D2610252523C400A2BA57 /* AppDelegate.swift */; };
 		EC4D2613252523C400A2BA57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D2612252523C400A2BA57 /* SceneDelegate.swift */; };
 		EC4D2615252523C400A2BA57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D2614252523C400A2BA57 /* ViewController.swift */; };
@@ -27,6 +29,8 @@
 		EC198FB525253513006C34FF /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		EC2B1DB3252E5DBC0039EB5F /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		EC312C7625379C6D00CCE885 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		EC312C7A25385EB600CCE885 /* QuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCell.swift; sourceTree = "<group>"; };
+		EC312C7F253863ED00CCE885 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		EC4D260D252523C400A2BA57 /* Git Commander.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Git Commander.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4D2610252523C400A2BA57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC4D2612252523C400A2BA57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				EC4D2614252523C400A2BA57 /* ViewController.swift */,
+				EC312C7A25385EB600CCE885 /* QuizCell.swift */,
 				EC2B1DB3252E5DBC0039EB5F /* UIButtonExtension.swift */,
 				EC5C28852530A3D90040388B /* TopicTableViewController.swift */,
 			);
@@ -80,6 +85,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		EC312C7E253863D700CCE885 /* Supporing Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC312C7F253863ED00CCE885 /* K.swift */,
+			);
+			path = "Supporing Files";
+			sourceTree = "<group>";
+		};
 		EC4D2604252523C400A2BA57 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +112,7 @@
 		EC4D260F252523C400A2BA57 /* Git Commander */ = {
 			isa = PBXGroup;
 			children = (
+				EC312C7E253863D700CCE885 /* Supporing Files */,
 				EC4D2610252523C400A2BA57 /* AppDelegate.swift */,
 				EC4D2612252523C400A2BA57 /* SceneDelegate.swift */,
 				EC198FB425253468006C34FF /* Models */,
@@ -186,8 +200,10 @@
 				EC198FB625253514006C34FF /* QuizBrain.swift in Sources */,
 				EC4D2615252523C400A2BA57 /* ViewController.swift in Sources */,
 				EC5C28862530A3D90040388B /* TopicTableViewController.swift in Sources */,
+				EC312C7B25385EB600CCE885 /* QuizCell.swift in Sources */,
 				EC198FB225253463006C34FF /* Question.swift in Sources */,
 				EC4D2611252523C400A2BA57 /* AppDelegate.swift in Sources */,
+				EC312C80253863ED00CCE885 /* K.swift in Sources */,
 				EC4D2613252523C400A2BA57 /* SceneDelegate.swift in Sources */,
 				ECA69D7B2532178B00F53ABF /* QuizBank.swift in Sources */,
 				EC2B1DB4252E5DBC0039EB5F /* UIButtonExtension.swift in Sources */,
