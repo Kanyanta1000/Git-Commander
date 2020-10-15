@@ -22,8 +22,8 @@ class TopicTableViewController: UITableViewController {
         let quiz = myQuizes[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: K.quizCellIdentifier, for: indexPath) as! QuizCell
-        
-        cell.setQuizDetails(quiz: quiz)
+
+        cell.configureQuizCell(quiz: quiz)
         
         return cell
     }
