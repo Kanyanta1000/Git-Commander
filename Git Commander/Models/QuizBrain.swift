@@ -31,6 +31,15 @@ struct QuizBrain {
         }
     }
     
+    mutating func decrementQuestionNumber() {
+        if questionNumber > 0 {
+            questionNumber -= 1
+        } else {
+            questionNumber = quiz.questions.count - 1
+            score = 0
+        }
+    }
+    
     mutating func setQuiz(topic: String?) {
         if topic != nil {
             quiz = quizBank().quizes.first { $0.title == topic}!
@@ -47,7 +56,9 @@ struct QuizBrain {
     }
     
     func getQuestionText() -> String {
-        return quiz.questions[questionNumber].text
+        
+        let questionText = "Question \(questionNumber + 1) of \(quiz.questions.count)\n \(quiz.questions[questionNumber].text)"
+        return questionText
     }
     
     func getSecondaryArgument() -> String {

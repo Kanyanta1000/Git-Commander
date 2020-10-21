@@ -15,6 +15,8 @@ class TopicTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = K.quizListTitle
     }
     
     //    MARK: - TableView Datasource Methods
@@ -42,7 +44,7 @@ class TopicTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! ViewController
+        let destinationVC = segue.destination as! QuizViewController
         
         destinationVC.quizTitle = quizTopic
     }

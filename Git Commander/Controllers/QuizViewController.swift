@@ -7,13 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class QuizViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var nextQuestionButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var secondaryArgLabel: UILabel!
+    
+    
     
     var quizBrain = QuizBrain()
     var quizTitle: String? {
@@ -28,6 +30,15 @@ class ViewController: UIViewController {
         updateUI()
     }
     
+    @IBAction func previousPressed(_ sender: UIButton) {
+        quizBrain.decrementQuestionNumber()
+        updateUI()
+    }
+    
+    @IBAction func nextPressed(_ sender: UIButton) {
+        quizBrain.incrementQuestionNumber()
+        updateUI()
+    }
     
     @IBAction func nextQuestionPressed(_ sender: UIButton) {
         var answerCorrect: Bool = false
@@ -38,10 +49,10 @@ class ViewController: UIViewController {
         if answerCorrect {
             sender.pulsate()
             quizBrain.incrementQuestionNumber()
-            sender.backgroundColor = UIColor.init(named: "Dark Primary Color")
+            sender.backgroundColor = UIColor.init(named: K.Colors.darkPrimary)
         } else {
             sender.shake()
-            sender.backgroundColor = UIColor.init(named: "Light Primary Color")
+            sender.backgroundColor = UIColor.init(named: K.Colors.lightPrimary)
         }
         
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
@@ -63,6 +74,7 @@ class ViewController: UIViewController {
     }
     
     @objc func updateUI() {
+        self.navigationItem.title = quizTitle
         questionLabel.text = quizBrain.getQuestionText()
         secondaryArgLabel.text = quizBrain.getSecondaryArgument()
         progressBar.progress = quizBrain.getProgress()

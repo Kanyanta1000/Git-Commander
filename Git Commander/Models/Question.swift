@@ -16,7 +16,7 @@ struct Question {
     init(q: String, a: String, a2: String?) {
         text = q
         answer = a
-        secondaryArgument = a2 ?? ""
+        secondaryArgument = a2
     }
 }
 

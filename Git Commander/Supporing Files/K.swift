@@ -11,18 +11,18 @@ struct K {
     static var quizCellIdentifier   = "QuizCell"
     static var goToQuestion         = "goToQuestion"
     static var numOfQuestionsText   = "questions"
+    static var quizListTitle        = "Git Trainer"
     
     
     struct Colors {
         static var accentColor      = ""
-        static var darkPrimary      = ""
-        static var lightPrimary     = ""
+        static var darkPrimary      = "Dark Primary Color"
+        static var lightPrimary     = "Light Primary Color"
         static var dividerColor     = ""
         static var primaryColor     = ""
         static var primaryText      = ""
         static var secondaryText    = ""
         static var textAndIcons     = ""
-        
     }
     
     
