@@ -66,6 +66,8 @@ struct QuizBrain {
     }
     
     func getProgress() -> Float {
-        return Float(questionNumber + 1)/Float(quiz.questions.count)
+        let progress = Float(questionNumber + 1)/Float(quiz.questions.count)
+        print(progress)
+        return progress
     }
 }

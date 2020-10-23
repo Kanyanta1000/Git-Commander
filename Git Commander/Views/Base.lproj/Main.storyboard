@@ -2,10 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sVC-aL-hOP">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -80,7 +79,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wz2-gS-Jpt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1660" y="93.103448275862078"/>
+            <point key="canvasLocation" x="1626" y="91"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -90,40 +89,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rwz-Jd-51y">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" distribution="equalCentering" alignment="center" spacing="51" translatesAutoresizingMaskIntoConstraints="NO" id="Rwz-Jd-51y" userLabel="Main Stack View">
+                                <rect key="frame" x="16" y="96" width="343" height="551"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSx-mH-8aw">
-                                        <rect key="frame" x="20" y="0.0" width="335" height="20.5"/>
+                                        <rect key="frame" x="30" y="0.0" width="283" height="20.5"/>
+                                        <color key="backgroundColor" name="Accent Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="Text and Icons"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="z4D-oD-vAj">
-                                        <rect key="frame" x="30" y="91" width="315" height="50"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="git" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8j8-r3-i47">
-                                                <rect key="frame" x="0.0" y="0.0" width="31" height="50"/>
-                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                                <color key="textColor" name="Text and Icons"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="7Eo-lN-FAm">
-                                                <rect key="frame" x="41" y="0.0" width="212.5" height="50"/>
-                                                <color key="backgroundColor" name="Light Primary Color"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vO-DQ-jWe">
-                                                <rect key="frame" x="263.5" y="0.0" width="51.5" height="50"/>
-                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                                <color key="textColor" name="Text and Icons"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                    <textField opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="7Eo-lN-FAm">
+                                        <rect key="frame" x="30" y="101" width="283" height="34"/>
+                                        <color key="backgroundColor" name="Light Primary Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkK-nD-JG1">
-                                        <rect key="frame" x="172.5" y="211.5" width="30" height="30"/>
+                                        <rect key="frame" x="156.5" y="211" width="30" height="30"/>
                                         <state key="normal" title="Hint">
                                             <color key="titleColor" name="Text and Icons"/>
                                         </state>
@@ -132,58 +115,58 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1R-s7-6Lv">
-                                        <rect key="frame" x="167" y="311.5" width="41.5" height="20.5"/>
+                                        <rect key="frame" x="151" y="323.5" width="41.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="Text and Icons"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZWC-u3-Kgl">
-                                        <rect key="frame" x="112.5" y="402.5" width="150" height="4"/>
-                                        <color key="progressTintColor" name="Accent Color"/>
-                                        <color key="trackTintColor" name="Primary Color"/>
-                                    </progressView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="4nI-HV-Z34">
-                                        <rect key="frame" x="162" y="477" width="51" height="190"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="myx-kc-3tZ">
+                                        <rect key="frame" x="108" y="426.5" width="127" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLu-2F-bb3">
-                                                <rect key="frame" x="0.0" y="0.0" width="51" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                 <state key="normal" title="&lt;&lt;"/>
                                                 <connections>
                                                     <action selector="previousPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W6n-oX-Afu"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H39-Do-O3W">
+                                                <rect key="frame" x="38" y="0.0" width="51" height="30"/>
+                                                <state key="normal" title="CHECK"/>
+                                                <connections>
+                                                    <action selector="checkPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bCs-nq-0YA"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rk-AC-Q5j">
-                                                <rect key="frame" x="0.0" y="80" width="51" height="30"/>
+                                                <rect key="frame" x="97" y="0.0" width="30" height="30"/>
                                                 <state key="normal" title="&gt;&gt;"/>
                                                 <connections>
                                                     <action selector="nextPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cUU-l7-bCu"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H39-Do-O3W">
-                                                <rect key="frame" x="0.0" y="160" width="51" height="30"/>
-                                                <state key="normal" title="CHECK"/>
-                                                <connections>
-                                                    <action selector="nextQuestionPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bCs-nq-0YA"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                     </stackView>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZWC-u3-Kgl">
+                                        <rect key="frame" x="60" y="547" width="223" height="4"/>
+                                        <color key="progressTintColor" name="Light Primary Color"/>
+                                        <color key="trackTintColor" name="Dark Primary Color"/>
+                                    </progressView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="GSx-mH-8aw" secondAttribute="trailing" constant="20" id="5XJ-OZ-fxZ"/>
-                                    <constraint firstItem="GSx-mH-8aw" firstAttribute="leading" secondItem="Rwz-Jd-51y" secondAttribute="leading" constant="20" id="Iz8-Bf-TN8"/>
-                                    <constraint firstAttribute="trailing" secondItem="z4D-oD-vAj" secondAttribute="trailing" constant="30" id="J1D-3f-9lr"/>
-                                    <constraint firstItem="z4D-oD-vAj" firstAttribute="leading" secondItem="Rwz-Jd-51y" secondAttribute="leading" constant="30" id="VBd-lk-qJV"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Eo-lN-FAm" secondAttribute="trailing" constant="30" id="Sz0-6L-g5c"/>
+                                    <constraint firstItem="GSx-mH-8aw" firstAttribute="leading" secondItem="Rwz-Jd-51y" secondAttribute="leading" constant="30" id="aDT-S6-jlG"/>
+                                    <constraint firstAttribute="trailing" secondItem="GSx-mH-8aw" secondAttribute="trailing" constant="30" id="n5b-ha-mB5"/>
+                                    <constraint firstItem="7Eo-lN-FAm" firstAttribute="leading" secondItem="Rwz-Jd-51y" secondAttribute="leading" constant="30" id="u4M-DI-wp3"/>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6LT-O9-F3t"/>
+                        <viewLayoutGuide key="safeArea" id="ysK-XU-CZZ"/>
                         <color key="backgroundColor" name="Primary Color"/>
                         <constraints>
-                            <constraint firstItem="Rwz-Jd-51y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BSM-eI-R2Q"/>
-                            <constraint firstAttribute="bottom" secondItem="Rwz-Jd-51y" secondAttribute="bottom" id="ISZ-pZ-uln"/>
-                            <constraint firstAttribute="trailing" secondItem="Rwz-Jd-51y" secondAttribute="trailing" id="LRY-Au-erf"/>
-                            <constraint firstItem="Rwz-Jd-51y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XWr-iv-NhW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rwz-Jd-51y" secondAttribute="trailing" id="7ha-0t-FMQ"/>
+                            <constraint firstItem="Rwz-Jd-51y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="I0m-yL-yeS"/>
+                            <constraint firstItem="Rwz-Jd-51y" firstAttribute="top" secondItem="ysK-XU-CZZ" secondAttribute="top" id="XDD-yA-dTS"/>
+                            <constraint firstItem="ysK-XU-CZZ" firstAttribute="bottom" secondItem="Rwz-Jd-51y" secondAttribute="bottom" constant="20" id="y2b-G5-VZk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LyF-NQ-6GD"/>
@@ -193,12 +176,11 @@
                         <outlet property="progressBar" destination="ZWC-u3-Kgl" id="fMu-fz-ygv"/>
                         <outlet property="questionLabel" destination="GSx-mH-8aw" id="RyW-CF-EZm"/>
                         <outlet property="scoreLabel" destination="O1R-s7-6Lv" id="qSL-Cu-OSi"/>
-                        <outlet property="secondaryArgLabel" destination="6vO-DQ-jWe" id="nnu-Il-cfY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2380" y="92.203898050974516"/>
+            <point key="canvasLocation" x="2341.5999999999999" y="89.505247376311857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Mn-gd-Uf5">
@@ -222,6 +204,9 @@
     <resources>
         <namedColor name="Accent Color">
             <color red="0.32549019607843138" green="0.42745098039215684" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Dark Primary Color">
+            <color red="0.29800000786781311" green="0.18299999833106995" blue="0.63499999046325684" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Light Primary Color">
             <color red="0.81960784313725488" green="0.7686274509803922" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

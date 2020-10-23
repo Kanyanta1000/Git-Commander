@@ -8,12 +8,13 @@
 import UIKit
 
 class QuizViewController: UIViewController {
+    
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var nextQuestionButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var answerTextField: UITextField!
-    @IBOutlet weak var secondaryArgLabel: UILabel!
+
     
     
     
@@ -40,7 +41,7 @@ class QuizViewController: UIViewController {
         updateUI()
     }
     
-    @IBAction func nextQuestionPressed(_ sender: UIButton) {
+    @IBAction func checkPressed(_ sender: UIButton) {
         var answerCorrect: Bool = false
         if let typedAnswer = answerTextField.text {
             answerCorrect = quizBrain.checkAnswer(typedAnswer)
@@ -76,7 +77,7 @@ class QuizViewController: UIViewController {
     @objc func updateUI() {
         self.navigationItem.title = quizTitle
         questionLabel.text = quizBrain.getQuestionText()
-        secondaryArgLabel.text = quizBrain.getSecondaryArgument()
+//        secondaryArgLabel.text = quizBrain.getSecondaryArgument()
         progressBar.progress = quizBrain.getProgress()
         scoreLabel.text = "Score: \(quizBrain.getScore())"
         answerTextField.text = ""
