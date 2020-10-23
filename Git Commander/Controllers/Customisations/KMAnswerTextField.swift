@@ -7,7 +7,7 @@
 
 import UIKit
 
-class KMQuestionTextField: UITextField {
+class KMAnswerTextField: UITextField {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,9 +24,10 @@ class KMQuestionTextField: UITextField {
     
     
     private func setUpField() {
-        backgroundColor         = UIColor(named: K.Colors.accentColor)
+//        backgroundColor         = 
         layer.cornerRadius      = 10
-        layer.borderWidth       = 0.2
+        layer.borderWidth       = 1
         layer.borderColor       = UIColor(named: K.Colors.textAndIcons)?.cgColor
+        textColor               = UIColor(named: K.Colors.textAndIcons)
     }
 }

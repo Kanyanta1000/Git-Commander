@@ -8,10 +8,10 @@
 import UIKit
 
 class QuizViewController: UIViewController {
-    
+
+    @IBOutlet weak var quizQuestionPageController: UIPageControl!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var nextQuestionButton: UIButton!
-    @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var answerTextField: UITextField!
 
@@ -75,11 +75,15 @@ class QuizViewController: UIViewController {
     @objc func updateUI() {
         
         self.setBackGround(bgImageView: bgImageView)    //programmatically setting bg from uiview extension
+        quizQuestionPageController.numberOfPages = quizBrain.getNumofQuestions()
+        
+        print(quizBrain.getNumofQuestions())
+        
         self.navigationItem.title = quizTitle
         questionLabel.text = quizBrain.getQuestionText()
-//        secondaryArgLabel.text = quizBrain.getSecondaryArgument()
-        progressBar.progress = quizBrain.getProgress()
         scoreLabel.text = "Score: \(quizBrain.getScore())"
         answerTextField.text = ""
+        
+
     }
 }

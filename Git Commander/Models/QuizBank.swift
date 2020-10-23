@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct quizBank {
+struct QuizBank {
     var quizes: [Quiz] = [
         
         Quiz(title: "Git Basics", icon: nil, questions: [

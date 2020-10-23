@@ -7,14 +7,27 @@
 
 import UIKit
 
-class KMLabel: UILabel {
+class KMQuestionLabel: UILabel {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setUpLabel()
     }
-    */
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        setUpLabel()
+    }
+    
+
+    private func setUpLabel() {
+        backgroundColor         = .none
+        
+        layer.cornerRadius      = 10
+        layer.borderWidth       = 0.2
+        layer.borderColor       = UIColor(named: K.Colors.textAndIcons)?.cgColor
+    }
 
 }

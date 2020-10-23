@@ -10,7 +10,7 @@ import UIKit
 
 class TopicTableViewController: UITableViewController {
     
-    let myQuizes = quizBank().quizes
+    let myQuizes = QuizBank().quizes
     var quizTopic: String?
     
     override func viewDidLoad() {

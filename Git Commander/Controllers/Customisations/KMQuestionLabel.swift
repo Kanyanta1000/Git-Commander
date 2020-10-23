@@ -1,5 +1,5 @@
 //
-//  KMTextField.swift
+//  KMLabel.swift
 //  Git Commander
 //
 //  Created by Kanyanta Mubanga on 23.10.2020.
@@ -7,26 +7,38 @@
 
 import UIKit
 
-class KMQuestionTextField: UITextField {
-    
+class KMQuestionLabel: UILabel {
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setUpField()
+        setUpLabel()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        setUpField()
+        setUpLabel()
     }
     
-    
-    
-    private func setUpField() {
-        backgroundColor         = UIColor(named: K.Colors.accentColor)
+
+    private func setUpLabel() {
+        
+        setConstraints()
+        
+        backgroundColor         = .none
+        
         layer.cornerRadius      = 10
-        layer.borderWidth       = 0.2
+        layer.borderWidth       = 1
         layer.borderColor       = UIColor(named: K.Colors.textAndIcons)?.cgColor
+        textColor               = UIColor(named: K.Colors.textAndIcons)
+
+    }
+
+    func setConstraints() {
+        
+        
+
+        
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 struct QuizBrain {
     
-    var quiz = quizBank().quizes[0]
+    var quiz = QuizBank().quizes[0]
     var questionNumber = 0
     var score = 0
     
@@ -42,8 +42,7 @@ struct QuizBrain {
     
     mutating func setQuiz(topic: String?) {
         if topic != nil {
-            quiz = quizBank().quizes.first { $0.title == topic}!
-
+            quiz = QuizBank().quizes.first { $0.title == topic}!
         }
     }
     
@@ -67,7 +66,10 @@ struct QuizBrain {
     
     func getProgress() -> Float {
         let progress = Float(questionNumber + 1)/Float(quiz.questions.count)
-        print(progress)
         return progress
+    }
+    
+    func getNumofQuestions() -> Int {
+        return quiz.questions.count
     }
 }

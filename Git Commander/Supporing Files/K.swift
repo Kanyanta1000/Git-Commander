@@ -17,13 +17,13 @@ struct K {
     
     struct Colors {
         static var accentColor      = ""
-        static var darkPrimary      = "Dark Primary Color"
+        static var darkPrimary      = "Wet Asphalt"
         static var lightPrimary     = "Light Primary Color"
         static var dividerColor     = ""
         static var primaryColor     = ""
         static var primaryText      = ""
         static var secondaryText    = ""
-        static var textAndIcons     = ""
+        static var textAndIcons     = "Silver"
     }
     
     
