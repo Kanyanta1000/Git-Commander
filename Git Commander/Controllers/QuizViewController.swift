@@ -15,9 +15,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var answerTextField: UITextField!
 
-    
-    
-    
+    let bgImageView = UIImageView()
     var quizBrain = QuizBrain()
     var quizTitle: String? {
         didSet {
@@ -75,6 +73,8 @@ class QuizViewController: UIViewController {
     }
     
     @objc func updateUI() {
+        
+        self.setBackGround(bgImageView: bgImageView)    //programmatically setting bg from uiview extension
         self.navigationItem.title = quizTitle
         questionLabel.text = quizBrain.getQuestionText()
 //        secondaryArgLabel.text = quizBrain.getSecondaryArgument()

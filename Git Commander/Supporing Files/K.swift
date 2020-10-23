@@ -12,6 +12,7 @@ struct K {
     static var goToQuestion         = "goToQuestion"
     static var numOfQuestionsText   = "questions"
     static var quizListTitle        = "Git Trainer"
+    static var bgImage              = "git-trainer-bg"
     
     
     struct Colors {
