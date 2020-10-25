@@ -14,7 +14,8 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var nextQuestionButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var answerTextField: UITextField!
-
+    @IBOutlet weak var starButton: UIButton!
+    
     let bgImageView = UIImageView()
     var quizBrain = QuizBrain()
     var quizTitle: String? {
@@ -72,15 +73,27 @@ class QuizViewController: UIViewController {
             
     }
     
+    
+    @IBAction func starPressed(_ sender: Any) {
+    }
+    
+    
+    
+    
     @objc func updateUI() {
         
         self.setBackGround(bgImageView: bgImageView)    //programmatically setting bg from uiview extension
         quizQuestionPageController.numberOfPages = quizBrain.getNumofQuestions()
         self.navigationItem.title = quizTitle
-        print(quizTitle)
         questionLabel.text = quizBrain.getQuestionText()
         scoreLabel.text = "Score: \(quizBrain.getScore())"
         answerTextField.text = ""
+        
+        if quizBrain.isStarredQuestion() {
+            starButton.setImage(UIImage(systemName: K.starFill), for: .normal)
+        } else {
+            starButton.setImage(UIImage(systemName: K.star), for: .normal)
+        }
         
 
     }

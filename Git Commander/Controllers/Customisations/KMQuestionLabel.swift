@@ -8,6 +8,11 @@
 import UIKit
 
 class KMQuestionLabel: UILabel {
+    
+    override func drawText(in rect: CGRect) {
+        let insets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        super.drawText(in: rect.inset(by: insets))
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)

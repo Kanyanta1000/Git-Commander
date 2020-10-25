@@ -12,6 +12,8 @@ struct Question {
     let text : String
     let answer : String
     let secondaryArgument : String?
+    var starred = false
+    
     
     init(q: String, a: String, a2: String?) {
         text = q

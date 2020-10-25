@@ -60,6 +60,11 @@ struct QuizBrain {
         return questionText
     }
     
+    func isStarredQuestion() -> Bool {
+        print("quizBrain.isStarredQuestion() ")
+        return quiz.questions[questionNumber].starred 
+    }
+    
     func getSecondaryArgument() -> String {
         return quiz.questions[questionNumber].secondaryArgument ?? ""
     }

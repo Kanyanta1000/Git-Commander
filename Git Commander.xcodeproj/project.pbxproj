@@ -13,7 +13,6 @@
 		EC1C1B542542F70000DD9303 /* KMAnswerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C1B532542F70000DD9303 /* KMAnswerTextField.swift */; };
 		EC1C1B572542F72A00DD9303 /* KMQuestionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C1B562542F72A00DD9303 /* KMQuestionLabel.swift */; };
 		EC1C1B5A2542F74500DD9303 /* KMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C1B592542F74500DD9303 /* KMButton.swift */; };
-		EC1C1B6125430C0200DD9303 /* KMHintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C1B6025430C0200DD9303 /* KMHintButton.swift */; };
 		EC2B1DB4252E5DBC0039EB5F /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B1DB3252E5DBC0039EB5F /* UIButtonExtension.swift */; };
 		EC312C7725379C6D00CCE885 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC312C7625379C6D00CCE885 /* Quiz.swift */; };
 		EC312C7B25385EB600CCE885 /* QuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC312C7A25385EB600CCE885 /* QuizCell.swift */; };
@@ -36,7 +35,6 @@
 		EC1C1B532542F70000DD9303 /* KMAnswerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMAnswerTextField.swift; sourceTree = "<group>"; };
 		EC1C1B562542F72A00DD9303 /* KMQuestionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMQuestionLabel.swift; sourceTree = "<group>"; };
 		EC1C1B592542F74500DD9303 /* KMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMButton.swift; sourceTree = "<group>"; };
-		EC1C1B6025430C0200DD9303 /* KMHintButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMHintButton.swift; sourceTree = "<group>"; };
 		EC2B1DB3252E5DBC0039EB5F /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		EC312C7625379C6D00CCE885 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		EC312C7A25385EB600CCE885 /* QuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCell.swift; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 				EC1C1B562542F72A00DD9303 /* KMQuestionLabel.swift */,
 				EC1C1B532542F70000DD9303 /* KMAnswerTextField.swift */,
 				EC1C1B592542F74500DD9303 /* KMButton.swift */,
-				EC1C1B6025430C0200DD9303 /* KMHintButton.swift */,
 			);
 			path = Customisations;
 			sourceTree = "<group>";
@@ -224,7 +221,6 @@
 				EC4D2615252523C400A2BA57 /* QuizViewController.swift in Sources */,
 				EC1C1B5A2542F74500DD9303 /* KMButton.swift in Sources */,
 				EC5C28862530A3D90040388B /* TopicTableViewController.swift in Sources */,
-				EC1C1B6125430C0200DD9303 /* KMHintButton.swift in Sources */,
 				EC312C7B25385EB600CCE885 /* QuizCell.swift in Sources */,
 				EC1C1B572542F72A00DD9303 /* KMQuestionLabel.swift in Sources */,
 				EC198FB225253463006C34FF /* Question.swift in Sources */,

@@ -15,6 +15,8 @@ struct K {
     static var bgImage              = "git-trainer-bg"
     static var remoteRepIcon        = "externaldrive.badge.icloud"
     static var rightChevron         = "chevron.right"
+    static var star                 = "star"
+    static var starFill             = "star.fill"
     
     
     struct Colors {
