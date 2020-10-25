@@ -42,7 +42,7 @@ struct QuizBrain {
     
     mutating func setQuiz(topic: String?) {
         if topic != nil {
-            quiz = QuizBank().quizes.first { $0.title == topic}!
+            quiz = QuizBank().quizes.first { $0.title.uppercased() == topic}!
         }
     }
     

@@ -76,10 +76,8 @@ class QuizViewController: UIViewController {
         
         self.setBackGround(bgImageView: bgImageView)    //programmatically setting bg from uiview extension
         quizQuestionPageController.numberOfPages = quizBrain.getNumofQuestions()
-        
-        print(quizBrain.getNumofQuestions())
-        
         self.navigationItem.title = quizTitle
+        print(quizTitle)
         questionLabel.text = quizBrain.getQuestionText()
         scoreLabel.text = "Score: \(quizBrain.getScore())"
         answerTextField.text = ""

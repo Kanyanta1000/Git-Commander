@@ -24,21 +24,19 @@ class KMQuestionLabel: UILabel {
 
     private func setUpLabel() {
         
-        setConstraints()
+//        setConstraints()
         
         backgroundColor         = .none
-        
         layer.cornerRadius      = 10
         layer.borderWidth       = 1
         layer.borderColor       = UIColor(named: K.Colors.textAndIcons)?.cgColor
         textColor               = UIColor(named: K.Colors.textAndIcons)
-
     }
 
-    func setConstraints() {
-        
-        
-
-        
-    }
+//    func setConstraints() {
+//
+//
+//
+//
+//    }
 }

@@ -11,6 +11,6 @@ import UIKit
 struct Quiz {
     let title : String
 //    let subTitle : String
-    let icon : UIImage?
+    let icon : String
     let questions : [Question]
 }

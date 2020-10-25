@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
 struct QuizBank {
     var quizes: [Quiz] = [
         
-        Quiz(title: "Git Basics", icon: nil, questions: [
+        Quiz(title: "Git Basics", icon: "book", questions: [
             Question(q: "Create empty Git repo in specified directory <directory>. Run with no arguments to initialize the current directory as a git repository.", a: "init", a2: "<directory>"),
             Question(q: "Clone repo located at <repo> onto local machine. Original repo can be located on the local filesystem or on a remote machine via HTTP or SSH.", a: "clone", a2: "<repo>"),
             Question(q: "Define author name to be used for all commits in current repo. Devs commonly use --global flag to set config options for current user.", a: "config user.name", a2: "<name>"),
@@ -21,25 +22,25 @@ struct QuizBank {
             Question(q: "Show unstaged changes between your index and working directory.", a: "diff", a2: "")
         ]),
         
-        Quiz(title: "Undoing Changes", icon: nil, questions: [
+        Quiz(title: "Undoing Changes", icon: "arrow.counterclockwise", questions: [
             Question(q: "Create new commit that undoes all of the changes made in <commit>, then apply it to the current branch.", a: "revert", a2: "<commit>"),
             Question(q: "Remove <file> from the staging area, but leave the working directory unchanged. This unstages a file without overwriting any changes.", a: "reset", a2: "<file>"),
             Question(q: "Remove <file> from the staging area, but leave the working directory unchanged. This unstages a file without overwriting any changes.", a: "clean", a2: "-n")
         ]),
         
-        Quiz(title: "Rewriting Git History", icon: nil, questions: [
+        Quiz(title: "Rewriting Git History", icon: "clock.arrow.circlepath", questions: [
             Question(q: "Replace the last commit with the staged changes and last commit combined. Use with nothing staged to edit the last commit’s message.", a: "commit", a2: "--amend"),
             Question(q: "Rebase the current branch onto <base>. <base> can be a commit ID, branch name, a tag, or a relative reference to HEAD.", a: "rebase", a2: "<base>"),
             Question(q: "Show a log of changes to the local repository’s HEAD. Add --relative-date flag to show date info or --all to show all refs", a: "reflog", a2: "")
         ]),
         
-        Quiz(title: "Git Branches", icon: nil, questions: [
+        Quiz(title: "Git Branches", icon: "arrow.triangle.branch", questions: [
             Question(q: "List all of the branches in your repo. Add a <branch> argument to create a new branch with the name <branch>.", a: "branch", a2: ""),
             Question(q: "Create and check out a new branch named <branch>. Drop the -b flag to checkout an existing branch.", a: "checkout -b", a2: "<branch>"),
             Question(q: "Merge <branch> into the current branch.", a: "merge", a2: "<branch>")
         ]),
         
-        Quiz(title: "Remote Repositories", icon: nil, questions: [
+        Quiz(title: "Remote Repositories", icon: "externaldrive.badge.icloud", questions: [
             Question(q: "Create a new connection to a remote repo. After adding a remote, you can use <name> as a shortcut for <url> in other commands.", a: "remote add", a2: "<name> <url>"),
             Question(q: "Fetches a specific <branch>, from the repo. Leave off <branch> to fetch all remote refs.", a: "fetch", a2: "<remote> <branch>"),
             Question(q: "Fetch the specified remote’s copy of current branch and immediately merge it into the local copy.", a: "pull", a2: "<remote>"),

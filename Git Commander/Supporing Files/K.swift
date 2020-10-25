@@ -13,6 +13,8 @@ struct K {
     static var numOfQuestionsText   = "questions"
     static var quizListTitle        = "Git Trainer"
     static var bgImage              = "git-trainer-bg"
+    static var remoteRepIcon        = "externaldrive.badge.icloud"
+    static var rightChevron         = "chevron.right"
     
     
     struct Colors {
@@ -23,7 +25,15 @@ struct K {
         static var primaryColor     = ""
         static var primaryText      = ""
         static var secondaryText    = ""
-        static var textAndIcons     = "Silver"
+        static var textAndIcons     = "Clouds"
+        
+        static var tableIcon0       = "Pumpkin"
+        static var tableIcon1       = "Belize Hole"
+        static var tableIcon2       = "Sun Flower"
+        static var tableIcon3       = "Nephritis"
+        static var tableIcon4       = "Carrot"
+        static var tableIcon5       = "Wisteria"
+        
     }
     
     
