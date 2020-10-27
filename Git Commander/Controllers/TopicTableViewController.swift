@@ -20,7 +20,7 @@ class TopicTableViewController: UITableViewController {
         tableView.backgroundView = UIImageView(image: UIImage(named: K.bgImage))
         navigationItem.title = K.quizListTitle
         
-        animateTableCells()
+//        animateTableCells()
 
     }
     
@@ -65,13 +65,13 @@ class TopicTableViewController: UITableViewController {
         }
         
         var delay = 0.5
-//        for cell in cells {
-//            UIView.animate(withDuration: 0.2, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [], animations: {
-//                cell.transform = .identity
-//            })
-//            
-//            delay += 0.15
-//        }
+        for cell in cells {
+            UIView.animate(withDuration: 0.2, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [], animations: {
+                cell.transform = .identity
+            })
+            
+            delay += 0.15
+        }
         
     }
     

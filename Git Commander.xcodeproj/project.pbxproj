@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EC198FB225253463006C34FF /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC198FB125253463006C34FF /* Question.swift */; };
-		EC198FB625253514006C34FF /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC198FB525253513006C34FF /* QuizBrain.swift */; };
+		EC198FB625253514006C34FF /* QuizManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC198FB525253513006C34FF /* QuizManager.swift */; };
 		EC1C1B4E2542F22000DD9303 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C1B4D2542F22000DD9303 /* UIViewControllerExtension.swift */; };
 		EC1C1B542542F70000DD9303 /* KMAnswerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C1B532542F70000DD9303 /* KMAnswerTextField.swift */; };
 		EC1C1B572542F72A00DD9303 /* KMQuestionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C1B562542F72A00DD9303 /* KMQuestionLabel.swift */; };
@@ -30,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		EC198FB125253463006C34FF /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		EC198FB525253513006C34FF /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
+		EC198FB525253513006C34FF /* QuizManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizManager.swift; sourceTree = "<group>"; };
 		EC1C1B4D2542F22000DD9303 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		EC1C1B532542F70000DD9303 /* KMAnswerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMAnswerTextField.swift; sourceTree = "<group>"; };
 		EC1C1B562542F72A00DD9303 /* KMQuestionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMQuestionLabel.swift; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 				EC198FB125253463006C34FF /* Question.swift */,
 				EC312C7625379C6D00CCE885 /* Quiz.swift */,
 				ECA69D7A2532178B00F53ABF /* QuizBank.swift */,
-				EC198FB525253513006C34FF /* QuizBrain.swift */,
+				EC198FB525253513006C34FF /* QuizManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,7 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC198FB625253514006C34FF /* QuizBrain.swift in Sources */,
+				EC198FB625253514006C34FF /* QuizManager.swift in Sources */,
 				EC4D2615252523C400A2BA57 /* QuizViewController.swift in Sources */,
 				EC1C1B5A2542F74500DD9303 /* KMButton.swift in Sources */,
 				EC5C28862530A3D90040388B /* TopicTableViewController.swift in Sources */,

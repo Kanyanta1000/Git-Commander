@@ -12,5 +12,5 @@ struct Quiz {
     let title : String
 //    let subTitle : String
     let icon : String
-    let questions : [Question]
+    var questions : [Question]
 }

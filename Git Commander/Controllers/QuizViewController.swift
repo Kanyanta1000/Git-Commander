@@ -17,7 +17,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var starButton: UIButton!
     
     let bgImageView = UIImageView()
-    var quizBrain = QuizBrain()
+    var quizBrain = QuizManager()
     var quizTitle: String? {
         didSet {
             quizBrain.setQuiz(topic: quizTitle)
@@ -73,28 +73,26 @@ class QuizViewController: UIViewController {
             
     }
     
-    
     @IBAction func starPressed(_ sender: Any) {
+        quizBrain.bookmarkQuestion()
+        setStar()
     }
     
-    
-    
-    
     @objc func updateUI() {
-        
         self.setBackGround(bgImageView: bgImageView)    //programmatically setting bg from uiview extension
         quizQuestionPageController.numberOfPages = quizBrain.getNumofQuestions()
         self.navigationItem.title = quizTitle
         questionLabel.text = quizBrain.getQuestionText()
         scoreLabel.text = "Score: \(quizBrain.getScore())"
         answerTextField.text = ""
-        
+        setStar()
+    }
+    
+    func setStar() {
         if quizBrain.isStarredQuestion() {
             starButton.setImage(UIImage(systemName: K.starFill), for: .normal)
         } else {
             starButton.setImage(UIImage(systemName: K.star), for: .normal)
         }
-        
-
     }
 }

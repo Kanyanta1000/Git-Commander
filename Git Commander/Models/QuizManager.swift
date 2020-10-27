@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct QuizBrain {
+struct QuizManager {
     
     var quiz = QuizBank().quizes[0]
     var questionNumber = 0
@@ -46,6 +46,10 @@ struct QuizBrain {
         }
     }
     
+    mutating func bookmarkQuestion() {
+        quiz.questions[questionNumber].starred = !quiz.questions[questionNumber].starred
+    }
+    
     func getHint() -> String {
         return quiz.questions[questionNumber].answer
     }
@@ -55,13 +59,11 @@ struct QuizBrain {
     }
     
     func getQuestionText() -> String {
-        
         let questionText = "Question \(questionNumber + 1) of \(quiz.questions.count)\n \(quiz.questions[questionNumber].text)"
         return questionText
     }
     
     func isStarredQuestion() -> Bool {
-        print("quizBrain.isStarredQuestion() ")
         return quiz.questions[questionNumber].starred 
     }
     
