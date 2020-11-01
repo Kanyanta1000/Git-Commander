@@ -108,12 +108,12 @@
 			path = Customisations;
 			sourceTree = "<group>";
 		};
-		EC312C7E253863D700CCE885 /* Supporing Files */ = {
+		EC312C7E253863D700CCE885 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				EC312C7F253863ED00CCE885 /* K.swift */,
 			);
-			path = "Supporing Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		EC4D2604252523C400A2BA57 = {
@@ -135,7 +135,7 @@
 		EC4D260F252523C400A2BA57 /* Git Commander */ = {
 			isa = PBXGroup;
 			children = (
-				EC312C7E253863D700CCE885 /* Supporing Files */,
+				EC312C7E253863D700CCE885 /* Supporting Files */,
 				EC4D2610252523C400A2BA57 /* AppDelegate.swift */,
 				EC4D2612252523C400A2BA57 /* SceneDelegate.swift */,
 				EC198FB425253468006C34FF /* Models */,
