@@ -2,12 +2,17 @@
 //  KMLabel.swift
 //  Git Commander
 //
-//  Created by Kanyanta Mubanga on 23.10.2020.
+//  Created by Kanyanta Mubanga on 28.10.2020.
 //
 
 import UIKit
 
-class KMQuestionLabel: UILabel {
+class KMLabel: UILabel {
+
+    override func drawText(in rect: CGRect) {
+        let insets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        super.drawText(in: rect.inset(by: insets))
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,11 +28,10 @@ class KMQuestionLabel: UILabel {
     
 
     private func setUpLabel() {
-        backgroundColor         = .none
-        
+        layer.backgroundColor   = UIColor(named: K.Colors.textAndIcons)?.cgColor
         layer.cornerRadius      = 10
-        layer.borderWidth       = 0.2
+        layer.masksToBounds     = true
         layer.borderColor       = UIColor(named: K.Colors.textAndIcons)?.cgColor
+        textColor               = UIColor(named: K.Colors.textAndIcons)
     }
-
 }

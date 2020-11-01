@@ -10,7 +10,6 @@ import UIKit
 
 struct Quiz {
     let title : String
-//    let subTitle : String
     let icon : String
     var questions : [Question]
 }

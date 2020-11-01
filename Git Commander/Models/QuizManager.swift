@@ -13,6 +13,13 @@ struct QuizManager {
     var questionNumber = 0
     var score = 0
     
+    
+    mutating func setQuiz(topic: String?) {
+        if topic != nil {
+            quiz = QuizBank().quizes.first { $0.title.uppercased() == topic}!
+        }
+    }
+    
     mutating func checkAnswer(_ userAnswer: String) -> Bool {
         if quiz.questions[questionNumber].answer == userAnswer {
             score += 1
@@ -40,12 +47,6 @@ struct QuizManager {
         }
     }
     
-    mutating func setQuiz(topic: String?) {
-        if topic != nil {
-            quiz = QuizBank().quizes.first { $0.title.uppercased() == topic}!
-        }
-    }
-    
     mutating func bookmarkQuestion() {
         quiz.questions[questionNumber].starred = !quiz.questions[questionNumber].starred
     }
@@ -59,7 +60,7 @@ struct QuizManager {
     }
     
     func getQuestionText() -> String {
-        let questionText = "Question \(questionNumber + 1) of \(quiz.questions.count)\n \(quiz.questions[questionNumber].text)"
+        let questionText = "Question \(questionNumber + 1) of \(quiz.questions.count)\n\n \(quiz.questions[questionNumber].text)"
         return questionText
     }
     

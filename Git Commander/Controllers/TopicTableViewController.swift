@@ -19,6 +19,7 @@ class TopicTableViewController: UITableViewController {
 
         tableView.backgroundView = UIImageView(image: UIImage(named: K.bgImage))
         navigationItem.title = K.quizListTitle
+        tableView.tableFooterView = UIView(frame: .zero)
         
 //        animateTableCells()
 

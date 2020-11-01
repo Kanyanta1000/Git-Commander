@@ -26,6 +26,7 @@
 		EC4D262625252ABA00A2BA57 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4D262525252ABA00A2BA57 /* Theme.xcassets */; };
 		EC5C28862530A3D90040388B /* TopicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5C28852530A3D90040388B /* TopicTableViewController.swift */; };
 		ECA69D7B2532178B00F53ABF /* QuizBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA69D7A2532178B00F53ABF /* QuizBank.swift */; };
+		ECDD96552548CE72007606B2 /* KMLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDD96542548CE72007606B2 /* KMLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		EC4D262525252ABA00A2BA57 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
 		EC5C28852530A3D90040388B /* TopicTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTableViewController.swift; sourceTree = "<group>"; };
 		ECA69D7A2532178B00F53ABF /* QuizBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBank.swift; sourceTree = "<group>"; };
+		ECDD96542548CE72007606B2 /* KMLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				EC1C1B4D2542F22000DD9303 /* UIViewControllerExtension.swift */,
 				EC2B1DB3252E5DBC0039EB5F /* UIButtonExtension.swift */,
 				EC1C1B562542F72A00DD9303 /* KMQuestionLabel.swift */,
+				ECDD96542548CE72007606B2 /* KMLabel.swift */,
 				EC1C1B532542F70000DD9303 /* KMAnswerTextField.swift */,
 				EC1C1B592542F74500DD9303 /* KMButton.swift */,
 			);
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECDD96552548CE72007606B2 /* KMLabel.swift in Sources */,
 				EC198FB625253514006C34FF /* QuizManager.swift in Sources */,
 				EC4D2615252523C400A2BA57 /* QuizViewController.swift in Sources */,
 				EC1C1B5A2542F74500DD9303 /* KMButton.swift in Sources */,

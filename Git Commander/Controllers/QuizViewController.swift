@@ -17,38 +17,39 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var starButton: UIButton!
     
     let bgImageView = UIImageView()
-    var quizBrain = QuizManager()
+    var quizManager = QuizManager()
     var quizTitle: String? {
         didSet {
-            quizBrain.setQuiz(topic: quizTitle)
+            quizManager.setQuiz(topic: quizTitle)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.setBackGround(bgImageView: bgImageView)    //programmatically setting bg from uiview extension
+        navigationItem.title = quizTitle
         updateUI()
     }
     
     @IBAction func previousPressed(_ sender: UIButton) {
-        quizBrain.decrementQuestionNumber()
+        quizManager.decrementQuestionNumber()
         updateUI()
     }
     
     @IBAction func nextPressed(_ sender: UIButton) {
-        quizBrain.incrementQuestionNumber()
+        quizManager.incrementQuestionNumber()
         updateUI()
     }
     
     @IBAction func checkPressed(_ sender: UIButton) {
         var answerCorrect: Bool = false
         if let typedAnswer = answerTextField.text {
-            answerCorrect = quizBrain.checkAnswer(typedAnswer)
+            answerCorrect = quizManager.checkAnswer(typedAnswer)
         }
         
         if answerCorrect {
             sender.pulsate()
-            quizBrain.incrementQuestionNumber()
+            quizManager.incrementQuestionNumber()
             sender.backgroundColor = UIColor.init(named: K.Colors.darkPrimary)
         } else {
             sender.shake()
@@ -60,7 +61,7 @@ class QuizViewController: UIViewController {
     
     @IBAction func hintPressed(_ sender: UIButton) {
         
-        let correctAnswer = quizBrain.getHint()
+        let correctAnswer = quizManager.getHint()
         
         let alert = UIAlertController(title: "Does this help?", message: "Number of letters: \(correctAnswer.count) \n First letter:  \(Array(correctAnswer)[0])", preferredStyle: .alert)
 
@@ -70,26 +71,23 @@ class QuizViewController: UIViewController {
         }))
 
         self.present(alert, animated: true)
-            
     }
     
     @IBAction func starPressed(_ sender: Any) {
-        quizBrain.bookmarkQuestion()
+        quizManager.bookmarkQuestion()
         setStar()
     }
     
-    @objc func updateUI() {
-        self.setBackGround(bgImageView: bgImageView)    //programmatically setting bg from uiview extension
-        quizQuestionPageController.numberOfPages = quizBrain.getNumofQuestions()
-        self.navigationItem.title = quizTitle
-        questionLabel.text = quizBrain.getQuestionText()
-        scoreLabel.text = "Score: \(quizBrain.getScore())"
+     @objc func updateUI() {
+        quizQuestionPageController.numberOfPages = quizManager.getNumofQuestions()
+        questionLabel.text = quizManager.getQuestionText()
+        scoreLabel.text = "Score: \(quizManager.getScore())"
         answerTextField.text = ""
         setStar()
     }
     
     func setStar() {
-        if quizBrain.isStarredQuestion() {
+        if quizManager.isStarredQuestion() {
             starButton.setImage(UIImage(systemName: K.starFill), for: .normal)
         } else {
             starButton.setImage(UIImage(systemName: K.star), for: .normal)
