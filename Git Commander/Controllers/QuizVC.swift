@@ -7,7 +7,7 @@
 
 import UIKit
 
-class QuizViewController: UIViewController {
+class QuizVC: UIViewController {
 
     @IBOutlet weak var quizQuestionPageController: UIPageControl!
     @IBOutlet weak var questionLabel: UILabel!

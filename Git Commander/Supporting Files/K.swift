@@ -8,6 +8,8 @@
 import Foundation
 
 struct K {
+
+    static var noQuizesFoundText    = "No quizes added"
     static var quizCellIdentifier   = "QuizCell"
     static var goToQuestion         = "goToQuestion"
     static var numOfQuestionsText   = "questions"
@@ -38,7 +40,28 @@ struct K {
         
     }
     
+    struct titles {
+        static var basics           = "Git Basics"
+//        static var     = "Wet Asphalt"
+//        static var     = "Light Primary Color"
+//        static var     = ""
+//        static var     = ""
+//        static var     = ""
+//        static var     = ""
+//        static var     = "Clouds"
+    }
     
+    struct icons {
+        static var basics       = ""
+        static var noSign       = "nosign"
+//        static var     = "Wet Asphalt"
+//        static var     = "Light Primary Color"
+//        static var     = ""
+//        static var     = ""
+//        static var     = ""
+//        static var     = ""
+//        static var     = "Clouds"
+    }
     
     
     

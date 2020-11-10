@@ -6,21 +6,22 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct QuizManager {
+class QuizManager {
     
-    var quiz = QuizBank().quizes[0]
+    var quiz = Quiz()
     var questionNumber = 0
     var score = 0
     
     
-    mutating func setQuiz(topic: String?) {
+    func setQuiz(topic: String?) {
         if topic != nil {
-            quiz = QuizBank().quizes.first { $0.title.uppercased() == topic}!
+            //            quiz = QuizBank().quizes.first { $0.title.uppercased() == topic}!
         }
     }
     
-    mutating func checkAnswer(_ userAnswer: String) -> Bool {
+    func checkAnswer(_ userAnswer: String) -> Bool {
         if quiz.questions[questionNumber].answer == userAnswer {
             score += 1
             return true
@@ -29,7 +30,7 @@ struct QuizManager {
         }
     }
     
-    mutating func incrementQuestionNumber() {
+    func incrementQuestionNumber() {
         if questionNumber < quiz.questions.count - 1 {
             questionNumber += 1
         } else {
@@ -38,7 +39,7 @@ struct QuizManager {
         }
     }
     
-    mutating func decrementQuestionNumber() {
+    func decrementQuestionNumber() {
         if questionNumber > 0 {
             questionNumber -= 1
         } else {
@@ -47,7 +48,7 @@ struct QuizManager {
         }
     }
     
-    mutating func bookmarkQuestion() {
+    func bookmarkQuestion() {
         quiz.questions[questionNumber].starred = !quiz.questions[questionNumber].starred
     }
     

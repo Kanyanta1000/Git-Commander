@@ -6,10 +6,17 @@
 //
 
 import Foundation
-import UIKit
+import RealmSwift
 
-struct Quiz {
-    let title : String
-    let icon : String
-    var questions : [Question]
+class Quiz: Object {
+    @objc dynamic var title : String = ""
+    @objc dynamic var icon : String = ""
+    let questions = List<Question>()
+    
+    convenience init(title: String, icon: String, question: Question?) {
+        self.init()
+        self.title = title
+        self.icon = icon
+//        self.questions.append(question!)
+    }
 }

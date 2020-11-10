@@ -7,18 +7,21 @@
 
 
 import Foundation
+import RealmSwift
 
-struct Question {
-    let text : String
-    let answer : String
-    let secondaryArgument : String?
-    var starred = false
+class Question: Object {
+    @objc dynamic var text : String = ""
+    @objc dynamic var answer : String = ""
+    @objc dynamic var secondaryArgument : String? = nil
+    @objc dynamic var starred = false
+    let parentQuiz = LinkingObjects(fromType: Quiz.self, property: "questions")
     
     
-    init(q: String, a: String, a2: String?) {
-        text = q
-        answer = a
-        secondaryArgument = a2
+    convenience init(q: String, a: String, a2: String?) {
+        self.init()
+        self.text = q
+        self.answer = a
+        self.secondaryArgument = a2
     }
 }
 

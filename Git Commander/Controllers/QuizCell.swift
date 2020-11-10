@@ -26,21 +26,21 @@ class QuizCell: UITableViewCell {
     
     
     
-    func configureQuizCell(quiz: Quiz, cellRow: Int) {
+    func configureQuizCell(quiz: Quiz?, cellRow: Int) {
         
         //icons
         iconView.backgroundColor         = iconBGColors[cellRow]
         iconView.layer.cornerRadius      = 10
         
-        if let quizIcon = UIImage(systemName: quiz.icon) {
+        if let quizIcon = UIImage(systemName: quiz?.icon ?? "") {
             iconView.image = quizIcon
         }
         
         
         //title and subtitle
-        topicLabel.text = quiz.title.uppercased()
+        topicLabel.text = quiz?.title.uppercased() ?? K.noQuizesFoundText
         topicLabel.textColor = iconColor
-        numOfQuestionsLabel.text = "\(quiz.questions.count) " + K.numOfQuestionsText
+        numOfQuestionsLabel.text = "\(quiz?.questions.count ?? 0) " + K.numOfQuestionsText
         
         
         //disclosure indicator

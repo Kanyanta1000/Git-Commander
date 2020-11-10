@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,12 +20,12 @@
 		EC312C80253863ED00CCE885 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC312C7F253863ED00CCE885 /* K.swift */; };
 		EC4D2611252523C400A2BA57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D2610252523C400A2BA57 /* AppDelegate.swift */; };
 		EC4D2613252523C400A2BA57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D2612252523C400A2BA57 /* SceneDelegate.swift */; };
-		EC4D2615252523C400A2BA57 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D2614252523C400A2BA57 /* QuizViewController.swift */; };
+		EC4D2615252523C400A2BA57 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D2614252523C400A2BA57 /* QuizVC.swift */; };
 		EC4D2618252523C400A2BA57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4D2616252523C400A2BA57 /* Main.storyboard */; };
 		EC4D261A252523C500A2BA57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4D2619252523C500A2BA57 /* Assets.xcassets */; };
 		EC4D261D252523C500A2BA57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4D261B252523C500A2BA57 /* LaunchScreen.storyboard */; };
 		EC4D262625252ABA00A2BA57 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4D262525252ABA00A2BA57 /* Theme.xcassets */; };
-		EC5C28862530A3D90040388B /* TopicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5C28852530A3D90040388B /* TopicTableViewController.swift */; };
+		EC5C28862530A3D90040388B /* TopicTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5C28852530A3D90040388B /* TopicTableVC.swift */; };
 		ECA69D7B2532178B00F53ABF /* QuizBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA69D7A2532178B00F53ABF /* QuizBank.swift */; };
 		ECDD96552548CE72007606B2 /* KMLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDD96542548CE72007606B2 /* KMLabel.swift */; };
 /* End PBXBuildFile section */
@@ -47,13 +47,13 @@
 		EC4D260D252523C400A2BA57 /* Git Commander.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Git Commander.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4D2610252523C400A2BA57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC4D2612252523C400A2BA57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EC4D2614252523C400A2BA57 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		EC4D2614252523C400A2BA57 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
 		EC4D2617252523C400A2BA57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC4D2619252523C500A2BA57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC4D261C252523C500A2BA57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC4D261E252523C500A2BA57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC4D262525252ABA00A2BA57 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
-		EC5C28852530A3D90040388B /* TopicTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTableViewController.swift; sourceTree = "<group>"; };
+		EC5C28852530A3D90040388B /* TopicTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTableVC.swift; sourceTree = "<group>"; };
 		ECA69D7A2532178B00F53ABF /* QuizBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBank.swift; sourceTree = "<group>"; };
 		ECDD96542548CE72007606B2 /* KMLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,7 +76,6 @@
 				349E9A3BB95F51D075E2E76F /* Pods-Git Commander.debug.xcconfig */,
 				1C90E91A4C7D1263F236792E /* Pods-Git Commander.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -91,9 +90,9 @@
 		EC198FAD2525338F006C34FF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EC4D2614252523C400A2BA57 /* QuizViewController.swift */,
+				EC5C28852530A3D90040388B /* TopicTableVC.swift */,
 				EC312C7A25385EB600CCE885 /* QuizCell.swift */,
-				EC5C28852530A3D90040388B /* TopicTableViewController.swift */,
+				EC4D2614252523C400A2BA57 /* QuizVC.swift */,
 				EC1C1B502542F46200DD9303 /* Customisations */,
 			);
 			path = Controllers;
@@ -291,9 +290,9 @@
 			files = (
 				ECDD96552548CE72007606B2 /* KMLabel.swift in Sources */,
 				EC198FB625253514006C34FF /* QuizManager.swift in Sources */,
-				EC4D2615252523C400A2BA57 /* QuizViewController.swift in Sources */,
+				EC4D2615252523C400A2BA57 /* QuizVC.swift in Sources */,
 				EC1C1B5A2542F74500DD9303 /* KMButton.swift in Sources */,
-				EC5C28862530A3D90040388B /* TopicTableViewController.swift in Sources */,
+				EC5C28862530A3D90040388B /* TopicTableVC.swift in Sources */,
 				EC312C7B25385EB600CCE885 /* QuizCell.swift in Sources */,
 				EC1C1B572542F72A00DD9303 /* KMQuestionLabel.swift in Sources */,
 				EC198FB225253463006C34FF /* Question.swift in Sources */,
