@@ -8,7 +8,7 @@
 import UIKit
 
 class QuizVC: UIViewController {
-
+    
     @IBOutlet weak var quizQuestionPageController: UIPageControl!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var nextQuestionButton: UIButton!
@@ -16,18 +16,23 @@ class QuizVC: UIViewController {
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var starButton: UIButton!
     
-    let bgImageView = UIImageView()
-    var quizManager = QuizManager()
-    var quizTitle: String? {
+    var currentQuiz: Quiz?{
         didSet {
-            quizManager.setQuiz(topic: quizTitle)
+            quizManager.quiz = currentQuiz
         }
     }
-    
+    let bgImageView = UIImageView()
+    var quizManager = QuizManager()
+    //    var quizTitle: String? {
+    //        didSet {
+    //            quizManager.setQuiz(topic: quizTitle)
+    //        }
+    //    }
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setBackGround(bgImageView: bgImageView)    //programmatically setting bg from uiview extension
-        navigationItem.title = quizTitle
+        navigationItem.title = currentQuiz?.title
         updateUI()
     }
     
@@ -64,12 +69,12 @@ class QuizVC: UIViewController {
         let correctAnswer = quizManager.getHint()
         
         let alert = UIAlertController(title: "Does this help?", message: "Number of letters: \(correctAnswer.count) \n First letter:  \(Array(correctAnswer)[0])", preferredStyle: .alert)
-
+        
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "I give up", style: .default, handler: { (action) in
             self.answerTextField.text = correctAnswer
         }))
-
+        
         self.present(alert, animated: true)
     }
     
@@ -78,7 +83,7 @@ class QuizVC: UIViewController {
         setStar()
     }
     
-     @objc func updateUI() {
+    @objc func updateUI() {
         quizQuestionPageController.numberOfPages = quizManager.getNumofQuestions()
         questionLabel.text = quizManager.getQuestionText()
         scoreLabel.text = "Score: \(quizManager.getScore())"

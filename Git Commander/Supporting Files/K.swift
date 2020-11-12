@@ -15,10 +15,18 @@ struct K {
     static var numOfQuestionsText   = "questions"
     static var quizListTitle        = "Git Trainer"
     static var bgImage              = "git-trainer-bg"
+    
+    //ICONS
     static var remoteRepIcon        = "externaldrive.badge.icloud"
     static var rightChevron         = "chevron.right"
     static var star                 = "star"
     static var starFill             = "star.fill"
+    static var basicsIcon           = "abc"
+    static var undoIcon             = "arrow.counterclockwise.circle"
+    static var historyIcon          = "clock.arrow.circlepath"
+    static var branchesIcon         = "arrow.triangle.branch"
+    static var reposIcon            = "externaldrive.badge.icloud"
+    static var noIcon               = "nosign"
     
     
     struct Colors {
@@ -40,27 +48,12 @@ struct K {
         
     }
     
-    struct titles {
+    struct quizTitles {
         static var basics           = "Git Basics"
-//        static var     = "Wet Asphalt"
-//        static var     = "Light Primary Color"
-//        static var     = ""
-//        static var     = ""
-//        static var     = ""
-//        static var     = ""
-//        static var     = "Clouds"
-    }
-    
-    struct icons {
-        static var basics       = ""
-        static var noSign       = "nosign"
-//        static var     = "Wet Asphalt"
-//        static var     = "Light Primary Color"
-//        static var     = ""
-//        static var     = ""
-//        static var     = ""
-//        static var     = ""
-//        static var     = "Clouds"
+        static var undoingChanges   = "Undoing Changes"
+        static var rewritingHistory = "Rewriting Git History"
+        static var branches         = "Git Branches"
+        static var remoteRepos      = "Remote Repos"
     }
     
     

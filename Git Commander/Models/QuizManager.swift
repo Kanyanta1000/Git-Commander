@@ -6,20 +6,20 @@
 //
 
 import Foundation
-import RealmSwift
+//import RealmSwift
 
 class QuizManager {
     
-    var quiz = Quiz()
+    var quiz: Quiz!
     var questionNumber = 0
     var score = 0
     
     
-    func setQuiz(topic: String?) {
-        if topic != nil {
-            //            quiz = QuizBank().quizes.first { $0.title.uppercased() == topic}!
-        }
-    }
+//    func setQuiz(currentQuiz: Quiz?) {
+//        if currentQuiz != nil {
+//            //            quiz = QuizBank().quizes.first { $0.title.uppercased() == topic}!
+//        }
+//    }
     
     func checkAnswer(_ userAnswer: String) -> Bool {
         if quiz.questions[questionNumber].answer == userAnswer {

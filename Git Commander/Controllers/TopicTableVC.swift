@@ -39,21 +39,20 @@ class TopicTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = self.tableView.cellForRow(at: indexPath) as! QuizCell
+
+        
         quizTopic = cell.topicLabel.text
-        tableView.deselectRow(at: indexPath, animated: true)
+        
         performSegue(withIdentifier: K.goToQuestion, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! QuizVC
+        let destinationVC = segue.destination as! QuizVC  
         
-        let row = tableView.indexPathForSelectedRow?.row
-
-//        if let indexPath = tableView.indexPathForSelectedRow {
-//
-//            print("selected title: \(myQuizes?[indexPath.row].title ?? <#default value#>)")
-//            destinationVC.quizTitle = myQuizes?[indexPath.row].title
-//        }
+        if let indexPath = tableView.indexPathForSelectedRow {
+            print(myQuizes![indexPath.row].title)
+            destinationVC.currentQuiz = myQuizes![indexPath.row]
+        }
         
     }
     
@@ -75,7 +74,8 @@ class TopicTableVC: UITableViewController {
             
             let newQuiz = Quiz()
             newQuiz.title = quizTitle
-            newQuiz.icon = quizBank.icons[quizTitle] ?? K.icons.noSign
+            newQuiz.icon = quizBank.icons[quizTitle] ?? K.noIcon
+            print("NEW QUIZ ICON: \(newQuiz.icon)")
             
             for question in questionArray {
                 newQuiz.questions.append(question)
