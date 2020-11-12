@@ -6,20 +6,14 @@
 //
 
 import Foundation
-//import RealmSwift
+import RealmSwift
 
 class QuizManager {
     
     var quiz: Quiz!
     var questionNumber = 0
     var score = 0
-    
-    
-//    func setQuiz(currentQuiz: Quiz?) {
-//        if currentQuiz != nil {
-//            //            quiz = QuizBank().quizes.first { $0.title.uppercased() == topic}!
-//        }
-//    }
+    let realm = try! Realm()
     
     func checkAnswer(_ userAnswer: String) -> Bool {
         if quiz.questions[questionNumber].answer == userAnswer {
@@ -49,7 +43,13 @@ class QuizManager {
     }
     
     func bookmarkQuestion() {
-        quiz.questions[questionNumber].starred = !quiz.questions[questionNumber].starred
+        do {
+            try realm.write {
+                quiz.questions[questionNumber].starred = !quiz.questions[questionNumber].starred
+            }
+        } catch  {
+            print("Error bookmarking question: \(error)")
+        }
     }
     
     func getHint() -> String {

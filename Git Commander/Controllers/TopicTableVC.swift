@@ -52,6 +52,7 @@ class TopicTableVC: UITableViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             print(myQuizes![indexPath.row].title)
             destinationVC.currentQuiz = myQuizes![indexPath.row]
+//            tableView.deselectRow(at: indexPath, animated: true)
         }
         
     }
@@ -63,7 +64,7 @@ class TopicTableVC: UITableViewController {
             populateDB()
         }
         
-        myQuizes = realm.objects(Quiz.self)
+        myQuizes = realm.objects(Quiz.self).sorted(byKeyPath: "title", ascending: true)
     }
     
     func populateDB() {
@@ -75,7 +76,6 @@ class TopicTableVC: UITableViewController {
             let newQuiz = Quiz()
             newQuiz.title = quizTitle
             newQuiz.icon = quizBank.icons[quizTitle] ?? K.noIcon
-            print("NEW QUIZ ICON: \(newQuiz.icon)")
             
             for question in questionArray {
                 newQuiz.questions.append(question)
@@ -97,7 +97,7 @@ class TopicTableVC: UITableViewController {
         navigationItem.title = K.quizListTitle
         tableView.tableFooterView = UIView(frame: .zero)
         
-        animateTableCells()
+//        animateTableCells()
     }
     
     func animateTableCells() {
