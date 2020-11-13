@@ -23,9 +23,7 @@ class QuizCell: UITableViewCell {
         UIColor(named: K.Colors.tableIcon4),
         UIColor(named: K.Colors.tableIcon5)
     ]
-    
-    
-    
+
     func configureQuizCell(quiz: Quiz?, cellRow: Int) {
         
         //icons
@@ -35,14 +33,12 @@ class QuizCell: UITableViewCell {
         if let quizIcon = UIImage(systemName: quiz?.icon ?? "") {
             iconView.image = quizIcon
         }
-        
-        
+
         //title and subtitle
         topicLabel.text = quiz?.title.uppercased() ?? K.noQuizesFoundText
         topicLabel.textColor = iconColor
         numOfQuestionsLabel.text = "\(quiz?.questions.count ?? 0) " + K.numOfQuestionsText
-        
-        
+
         //disclosure indicator
         let disclosureIndicatorConfig = UIImage.SymbolConfiguration(pointSize: 15, weight: .medium, scale: .medium)
         let rightArrow = UIImage(systemName: K.rightChevron, withConfiguration: disclosureIndicatorConfig)

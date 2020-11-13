@@ -43,12 +43,36 @@ class QuizManager {
     }
     
     func bookmarkQuestion() {
+        let starredQuiz = realm.objects(Quiz.self).filter("title == %@", K.quizTitles.starred).first
+        let currentQuestion = quiz.questions[questionNumber]
+        
         do {
             try realm.write {
-                quiz.questions[questionNumber].starred = !quiz.questions[questionNumber].starred
+                currentQuestion.isStarred = !currentQuestion.isStarred
             }
         } catch  {
             print("Error bookmarking question: \(error)")
+        }
+        
+        if currentQuestion.isStarred {
+            do {
+                try realm.write {
+                    starredQuiz?.questions.append(quiz.questions[questionNumber])
+                }
+            } catch {
+                print("Error adding question to Starred quiz question list: \(error)")
+            }
+            
+        } else {
+            if let questionIndex = starredQuiz?.questions.index(of: currentQuestion) {
+                do {
+                    try realm.write {
+                        starredQuiz?.questions.remove(at: questionIndex)
+                    }
+                } catch {
+                    print("Error removing question from Starred quiz question list: \(error)")
+                }
+            }
         }
     }
     
@@ -66,7 +90,7 @@ class QuizManager {
     }
     
     func isStarredQuestion() -> Bool {
-        return quiz.questions[questionNumber].starred 
+        return quiz.questions[questionNumber].isStarred 
     }
     
     func getSecondaryArgument() -> String {

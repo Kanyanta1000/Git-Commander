@@ -17,6 +17,5 @@ class Quiz: Object {
         self.init()
         self.title = title
         self.icon = icon
-//        self.questions.append(question!)
     }
 }

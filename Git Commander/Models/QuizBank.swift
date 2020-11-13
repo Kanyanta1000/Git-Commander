@@ -15,7 +15,8 @@ struct QuizBank {
         K.quizTitles.undoingChanges : K.undoIcon,
         K.quizTitles.rewritingHistory : K.historyIcon,
         K.quizTitles.branches : K.branchesIcon,
-        K.quizTitles.remoteRepos : K.reposIcon
+        K.quizTitles.remoteRepos : K.reposIcon,
+        K.quizTitles.starred : K.bookmark
     ]
     
     let quizDictionary: [String: [Question]] = [
@@ -53,7 +54,9 @@ struct QuizBank {
             Question(q: "List all of the branches in your repo. Add a <branch> argument to create a new branch with the name <branch>.", a: "branch", a2: ""),
             Question(q: "Create and check out a new branch named <branch>. Drop the -b flag to checkout an existing branch.", a: "checkout -b", a2: "<branch>"),
             Question(q: "Merge <branch> into the current branch.", a: "merge", a2: "<branch>")
-        ]
+        ],
+        
+        K.quizTitles.starred: []
     ]
 
 }

@@ -11,12 +11,10 @@ import RealmSwift
 class TopicTableVC: UITableViewController {
     
     let realm = try! Realm()
-    
     var myQuizes: Results<Quiz>?
     var quizTopic: String?
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         setUpUI()
@@ -39,7 +37,6 @@ class TopicTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = self.tableView.cellForRow(at: indexPath) as! QuizCell
-
         
         quizTopic = cell.topicLabel.text
         
@@ -52,7 +49,6 @@ class TopicTableVC: UITableViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             print(myQuizes![indexPath.row].title)
             destinationVC.currentQuiz = myQuizes![indexPath.row]
-//            tableView.deselectRow(at: indexPath, animated: true)
         }
         
     }
@@ -70,10 +66,11 @@ class TopicTableVC: UITableViewController {
     func populateDB() {
         let quizBank    = QuizBank()
         let quizes      = quizBank.quizDictionary
-        
+
         for (quizTitle, questionArray) in quizes {
             
             let newQuiz = Quiz()
+            
             newQuiz.title = quizTitle
             newQuiz.icon = quizBank.icons[quizTitle] ?? K.noIcon
             
@@ -96,6 +93,7 @@ class TopicTableVC: UITableViewController {
         tableView.backgroundView = UIImageView(image: UIImage(named: K.bgImage))
         navigationItem.title = K.quizListTitle
         tableView.tableFooterView = UIView(frame: .zero)
+        tableView.reloadData()
         
 //        animateTableCells()
     }

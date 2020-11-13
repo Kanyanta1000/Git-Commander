@@ -17,7 +17,6 @@ struct K {
     static var bgImage              = "git-trainer-bg"
     
     //ICONS
-    static var remoteRepIcon        = "externaldrive.badge.icloud"
     static var rightChevron         = "chevron.right"
     static var star                 = "star"
     static var starFill             = "star.fill"
@@ -27,6 +26,7 @@ struct K {
     static var branchesIcon         = "arrow.triangle.branch"
     static var reposIcon            = "externaldrive.badge.icloud"
     static var noIcon               = "nosign"
+    static var bookmark             = "bookmark"
     
     
     struct Colors {
@@ -54,6 +54,7 @@ struct K {
         static var rewritingHistory = "Rewriting Git History"
         static var branches         = "Git Branches"
         static var remoteRepos      = "Remote Repos"
+        static var starred          = "Starred"
     }
     
     

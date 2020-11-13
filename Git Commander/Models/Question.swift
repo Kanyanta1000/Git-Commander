@@ -13,7 +13,7 @@ class Question: Object {
     @objc dynamic var text : String = ""
     @objc dynamic var answer : String = ""
     @objc dynamic var secondaryArgument : String? = nil
-    @objc dynamic var starred = false
+    @objc dynamic var isStarred = false
     let parentQuiz = LinkingObjects(fromType: Quiz.self, property: "questions")
     
     

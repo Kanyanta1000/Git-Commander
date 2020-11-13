@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Error initialising Realm: \(error)")
         }
 
-
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         return true
     }

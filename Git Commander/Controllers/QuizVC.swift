@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class QuizVC: UIViewController {
+    
+    let realm = try! Realm()
     
     @IBOutlet weak var quizQuestionPageController: UIPageControl!
     @IBOutlet weak var questionLabel: UILabel!
@@ -21,14 +24,10 @@ class QuizVC: UIViewController {
             quizManager.quiz = currentQuiz
         }
     }
+    
     let bgImageView = UIImageView()
     var quizManager = QuizManager()
-    //    var quizTitle: String? {
-    //        didSet {
-    //            quizManager.setQuiz(topic: quizTitle)
-    //        }
-    //    }
-    //
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setBackGround(bgImageView: bgImageView)    //programmatically setting bg from uiview extension
@@ -83,19 +82,19 @@ class QuizVC: UIViewController {
         setStar()
     }
     
-    @objc func updateUI() {
-        quizQuestionPageController.numberOfPages = quizManager.getNumofQuestions()
-        questionLabel.text = quizManager.getQuestionText()
-        scoreLabel.text = "Score: \(quizManager.getScore())"
-        answerTextField.text = ""
-        setStar()
-    }
-    
     func setStar() {
         if quizManager.isStarredQuestion() {
             starButton.setImage(UIImage(systemName: K.starFill), for: .normal)
         } else {
             starButton.setImage(UIImage(systemName: K.star), for: .normal)
         }
+    }
+    
+    @objc func updateUI() {
+        quizQuestionPageController.numberOfPages = quizManager.getNumofQuestions()
+        questionLabel.text = quizManager.getQuestionText()
+        scoreLabel.text = "Score: \(quizManager.getScore())"
+        answerTextField.text = ""
+        setStar()
     }
 }
