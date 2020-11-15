@@ -19,15 +19,14 @@ class QuizVC: UIViewController {
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var starButton: UIButton!
     
-    var currentQuiz: Quiz?{
+    var currentQuiz: Quiz! {
         didSet {
             quizManager.quiz = currentQuiz
         }
     }
-    
     let bgImageView = UIImageView()
     var quizManager = QuizManager()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setBackGround(bgImageView: bgImageView)    //programmatically setting bg from uiview extension
@@ -78,8 +77,10 @@ class QuizVC: UIViewController {
     }
     
     @IBAction func starPressed(_ sender: Any) {
-        quizManager.bookmarkQuestion()
-        setStar()
+        if questionLabel.text! != K.noQuestionsFoundText {
+            quizManager.bookmarkQuestion()
+            updateUI()
+        }
     }
     
     func setStar() {
@@ -89,6 +90,7 @@ class QuizVC: UIViewController {
             starButton.setImage(UIImage(systemName: K.star), for: .normal)
         }
     }
+    
     
     @objc func updateUI() {
         quizQuestionPageController.numberOfPages = quizManager.getNumofQuestions()

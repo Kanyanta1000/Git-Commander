@@ -8,7 +8,7 @@
 import Foundation
 
 struct K {
-
+    static var noQuestionsFoundText = "This quiz has no questions"
     static var noQuizesFoundText    = "No quizes added"
     static var quizCellIdentifier   = "QuizCell"
     static var goToQuestion         = "goToQuestion"
@@ -26,7 +26,7 @@ struct K {
     static var branchesIcon         = "arrow.triangle.branch"
     static var reposIcon            = "externaldrive.badge.icloud"
     static var noIcon               = "nosign"
-    static var bookmark             = "bookmark"
+    static var starredIcon          = "star"
     
     
     struct Colors {

@@ -16,7 +16,7 @@ struct QuizBank {
         K.quizTitles.rewritingHistory : K.historyIcon,
         K.quizTitles.branches : K.branchesIcon,
         K.quizTitles.remoteRepos : K.reposIcon,
-        K.quizTitles.starred : K.bookmark
+        K.quizTitles.starred : K.starredIcon
     ]
     
     let quizDictionary: [String: [Question]] = [

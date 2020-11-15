@@ -14,6 +14,10 @@ class TopicTableVC: UITableViewController {
     var myQuizes: Results<Quiz>?
     var quizTopic: String?
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,9 +50,14 @@ class TopicTableVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! QuizVC  
         
+        var newQuiz = Quiz()
+        
         if let indexPath = tableView.indexPathForSelectedRow {
-            print(myQuizes![indexPath.row].title)
-            destinationVC.currentQuiz = myQuizes![indexPath.row]
+            if let selectedQuiz = myQuizes?[indexPath.row] {
+                newQuiz = selectedQuiz
+            }
+            
+            destinationVC.currentQuiz = newQuiz
         }
         
     }
@@ -93,7 +102,6 @@ class TopicTableVC: UITableViewController {
         tableView.backgroundView = UIImageView(image: UIImage(named: K.bgImage))
         navigationItem.title = K.quizListTitle
         tableView.tableFooterView = UIView(frame: .zero)
-        tableView.reloadData()
         
 //        animateTableCells()
     }

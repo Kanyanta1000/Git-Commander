@@ -10,7 +10,7 @@ import RealmSwift
 
 class QuizManager {
     
-    var quiz: Quiz!
+    var quiz = Quiz()
     var questionNumber = 0
     var score = 0
     let realm = try! Realm()
@@ -45,7 +45,7 @@ class QuizManager {
     func bookmarkQuestion() {
         let starredQuiz = realm.objects(Quiz.self).filter("title == %@", K.quizTitles.starred).first
         let currentQuestion = quiz.questions[questionNumber]
-        
+
         do {
             try realm.write {
                 currentQuestion.isStarred = !currentQuestion.isStarred
@@ -65,12 +65,14 @@ class QuizManager {
             
         } else {
             if let questionIndex = starredQuiz?.questions.index(of: currentQuestion) {
-                do {
-                    try realm.write {
-                        starredQuiz?.questions.remove(at: questionIndex)
+                if starredQuiz!.questions.count > 0 {
+                    do {
+                        try realm.write {
+                            starredQuiz?.questions.remove(at: questionIndex)
+                        }
+                    } catch {
+                        print("Error removing question from Starred quiz question list: \(error)")
                     }
-                } catch {
-                    print("Error removing question from Starred quiz question list: \(error)")
                 }
             }
         }
@@ -85,12 +87,20 @@ class QuizManager {
     }
     
     func getQuestionText() -> String {
-        let questionText = "Question \(questionNumber + 1) of \(quiz.questions.count)\n\n \(quiz.questions[questionNumber].text)"
-        return questionText
+        if quiz.questions.count == 0 {
+            return K.noQuestionsFoundText
+        } else {
+            let questionText = "Question \(questionNumber + 1) of \(quiz.questions.count)\n\n \(quiz.questions[questionNumber].text)"
+            return questionText
+        }
     }
     
     func isStarredQuestion() -> Bool {
-        return quiz.questions[questionNumber].isStarred 
+        if quiz.questions.count != 0 {
+            return quiz.questions[questionNumber].isStarred
+        } else {
+            return false
+        }     
     }
     
     func getSecondaryArgument() -> String {
