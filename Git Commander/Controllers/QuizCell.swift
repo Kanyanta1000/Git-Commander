@@ -30,9 +30,9 @@ class QuizCell: UITableViewCell {
         iconView.backgroundColor         = iconBGColors[cellRow]
         iconView.layer.cornerRadius      = 10
         
-        if let quizIcon = UIImage(systemName: quiz?.icon ?? "") {
-            iconView.image = quizIcon
-        }
+            let iconImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .bold, scale: .medium)
+            iconView.image = UIImage(systemName: quiz?.icon ?? "", withConfiguration: iconImageConfig)
+
 
         //title and subtitle
         topicLabel.text = quiz?.title.uppercased() ?? K.noQuizesFoundText

@@ -99,6 +99,7 @@ class TopicTableVC: UITableViewController {
     
     //    MARK: - UI Functions
     func setUpUI() {
+        
         tableView.backgroundView = UIImageView(image: UIImage(named: K.bgImage))
         navigationItem.title = K.quizListTitle
         tableView.tableFooterView = UIView(frame: .zero)
@@ -106,7 +107,12 @@ class TopicTableVC: UITableViewController {
 //        animateTableCells()
     }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        animateTableCells()
+    }
+    
     func animateTableCells() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         let cells = tableView.visibleCells
         for cell in cells {
             cell.transform = CGAffineTransform(translationX: view.frame.width, y: 0)

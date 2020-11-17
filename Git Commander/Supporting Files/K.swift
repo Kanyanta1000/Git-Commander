@@ -18,16 +18,20 @@ struct K {
     
     //ICONS
     static var rightChevron         = "chevron.right"
+    static var leftChevron          = "chevron.left"
+    static var hintIcon             = "questionmark.square"
+    static var leftIcon             = "chevron.backward"
+    static var rightIcon            = "chevron.forward"
+    static var answerIcon           = "circle"
     static var star                 = "star"
     static var starFill             = "star.fill"
-    static var basicsIcon           = "abc"
+    static var basicsIcon           = "textformat.abc"
     static var undoIcon             = "arrow.counterclockwise.circle"
     static var historyIcon          = "clock.arrow.circlepath"
     static var branchesIcon         = "arrow.triangle.branch"
     static var reposIcon            = "externaldrive.badge.icloud"
     static var noIcon               = "nosign"
-    static var starredIcon          = "star"
-    
+    static var starredIcon          = "star.fill"
     
     struct Colors {
         static var accentColor      = ""

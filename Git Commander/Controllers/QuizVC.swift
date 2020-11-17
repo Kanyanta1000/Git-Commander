@@ -14,10 +14,14 @@ class QuizVC: UIViewController {
     
     @IBOutlet weak var quizQuestionPageController: UIPageControl!
     @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet weak var checkAnswerButton: UIButton!
     @IBOutlet weak var nextQuestionButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var starButton: UIButton!
+    @IBOutlet weak var hintButton: UIButton!
+
     
     var currentQuiz: Quiz! {
         didSet {
@@ -45,6 +49,10 @@ class QuizVC: UIViewController {
     }
     
     @IBAction func checkPressed(_ sender: UIButton) {
+        if questionLabel.text! == K.noQuestionsFoundText {
+            return
+        }
+        
         var answerCorrect: Bool = false
         if let typedAnswer = answerTextField.text {
             answerCorrect = quizManager.checkAnswer(typedAnswer)
@@ -63,6 +71,11 @@ class QuizVC: UIViewController {
     }
     
     @IBAction func hintPressed(_ sender: UIButton) {
+        
+        if questionLabel.text! == K.noQuestionsFoundText {
+            return
+        }
+        
         
         let correctAnswer = quizManager.getHint()
         
@@ -93,7 +106,14 @@ class QuizVC: UIViewController {
     
     
     @objc func updateUI() {
+        let checkAnswerConfig = UIImage.SymbolConfiguration(pointSize: 50, weight: .light, scale: .medium)
+        let answerButton = UIImage(systemName: K.answerIcon, withConfiguration: checkAnswerConfig)
+        
         quizQuestionPageController.numberOfPages = quizManager.getNumofQuestions()
+        hintButton.setImage(UIImage(systemName: K.hintIcon), for: .normal)
+        previousButton.setImage(UIImage(systemName: K.leftIcon), for: .normal)
+        checkAnswerButton.setImage(answerButton, for: .normal)
+        nextQuestionButton.setImage(UIImage(systemName: K.rightIcon), for: .normal)
         questionLabel.text = quizManager.getQuestionText()
         scoreLabel.text = "Score: \(quizManager.getScore())"
         answerTextField.text = ""
