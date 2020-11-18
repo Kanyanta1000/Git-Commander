@@ -42,7 +42,8 @@ struct K {
         static var primaryText      = ""
         static var secondaryText    = ""
         static var textAndIcons     = "Clouds"
-        
+        static var red              = "Pomegranate"
+        static var green            = "Emerald"
         static var tableIcon0       = "Pumpkin"
         static var tableIcon1       = "Belize Hole"
         static var tableIcon2       = "Sun Flower"
