@@ -30,7 +30,7 @@ class QuizCell: UITableViewCell {
         iconView.backgroundColor         = iconBGColors[cellRow]
         iconView.layer.cornerRadius      = 10
         
-            let iconImageConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .bold, scale: .medium)
+            let iconImageConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .medium, scale: .medium)
             iconView.image = UIImage(systemName: quiz?.icon ?? "", withConfiguration: iconImageConfig)
 
 

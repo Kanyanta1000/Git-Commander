@@ -22,7 +22,7 @@ struct K {
     static var hintIcon             = "questionmark.square"
     static var leftIcon             = "chevron.backward"
     static var rightIcon            = "chevron.forward"
-    static var answerIcon           = "circle"
+    static var answerIcon           = "checkmark.circle.fill"
     static var star                 = "star"
     static var starFill             = "star.fill"
     static var basicsIcon           = "textformat.abc"
