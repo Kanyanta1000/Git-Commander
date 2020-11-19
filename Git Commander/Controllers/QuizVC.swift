@@ -21,7 +21,7 @@ class QuizVC: UIViewController {
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var starButton: UIButton!
     @IBOutlet weak var hintButton: UIButton!
-
+    
     
     var currentQuiz: Quiz! {
         didSet {
@@ -31,12 +31,27 @@ class QuizVC: UIViewController {
     let bgImageView = UIImageView()
     var quizManager = QuizManager()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        answerTextField.delegate = self
+        
+//         Listening for keyboard events
+                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
         self.setBackGround(bgImageView: bgImageView)    //programmatically setting bg from uiview extension
         navigationItem.title = currentQuiz?.title
         updateUI()
     }
+    
+        deinit {
+            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        }
     
     @IBAction func previousPressed(_ sender: UIButton) {
         quizManager.decrementQuestionNumber()
@@ -62,10 +77,9 @@ class QuizVC: UIViewController {
             sender.pulsate()
             sender.tintColor = UIColor.init(named: K.Colors.green)
             quizManager.incrementQuestionNumber()
-            //sender.backgroundColor = UIColor.init(named: K.Colors.darkPrimary)
+            
         } else {
             sender.shake()
-//            sender.backgroundColor = UIColor.init(named: K.Colors.lightPrimary)
             sender.tintColor = UIColor.init(named: K.Colors.red)
         }
         
@@ -77,7 +91,6 @@ class QuizVC: UIViewController {
         if questionLabel.text! == K.noQuestionsFoundText {
             return
         }
-        
         
         let correctAnswer = quizManager.getHint()
         
@@ -106,7 +119,6 @@ class QuizVC: UIViewController {
         }
     }
     
-    
     @objc func updateUI() {
         let checkAnswerConfig = UIImage.SymbolConfiguration(pointSize: 50, weight: .light, scale: .medium)
         let answerButton = UIImage(systemName: K.answerIcon, withConfiguration: checkAnswerConfig)
@@ -115,10 +127,35 @@ class QuizVC: UIViewController {
         hintButton.setImage(UIImage(systemName: K.hintIcon), for: .normal)
         previousButton.setImage(UIImage(systemName: K.leftIcon), for: .normal)
         checkAnswerButton.setImage(answerButton, for: .normal)
+        checkAnswerButton.tintColor = UIColor.init(named: K.Colors.green)
         nextQuestionButton.setImage(UIImage(systemName: K.rightIcon), for: .normal)
         questionLabel.text = quizManager.getQuestionText()
         scoreLabel.text = "Score: \(quizManager.getScore())"
         answerTextField.text = ""
         setStar()
+    }
+}
+
+extension QuizVC: UITextFieldDelegate {
+   
+    @objc func keyboardWillChange(notification: Notification) {
+        print("Keyboard will show: \(notification.name.rawValue)")
+        
+        var topbarHeight: CGFloat {
+                return (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0) +
+                    (self.navigationController?.navigationBar.frame.height ?? 0.0)
+            }
+
+        if notification.name == UIResponder.keyboardWillShowNotification {
+            view.frame.origin.y = topbarHeight - 60
+            
+        } else {
+            
+            view.frame.origin.y = topbarHeight
+        }
+    }
+    
+    func hideKeyboard() {
+        answerTextField.resignFirstResponder()
     }
 }

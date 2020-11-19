@@ -20,7 +20,6 @@
 		EC312C80253863ED00CCE885 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC312C7F253863ED00CCE885 /* K.swift */; };
 		EC4D2611252523C400A2BA57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D2610252523C400A2BA57 /* AppDelegate.swift */; };
 		EC4D2613252523C400A2BA57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D2612252523C400A2BA57 /* SceneDelegate.swift */; };
-		EC4D2615252523C400A2BA57 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D2614252523C400A2BA57 /* QuizVC.swift */; };
 		EC4D2618252523C400A2BA57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4D2616252523C400A2BA57 /* Main.storyboard */; };
 		EC4D261A252523C500A2BA57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4D2619252523C500A2BA57 /* Assets.xcassets */; };
 		EC4D261D252523C500A2BA57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4D261B252523C500A2BA57 /* LaunchScreen.storyboard */; };
@@ -28,6 +27,7 @@
 		EC5C28862530A3D90040388B /* TopicTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5C28852530A3D90040388B /* TopicTableVC.swift */; };
 		ECA69D7B2532178B00F53ABF /* QuizBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA69D7A2532178B00F53ABF /* QuizBank.swift */; };
 		ECDD96552548CE72007606B2 /* KMLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDD96542548CE72007606B2 /* KMLabel.swift */; };
+		ECE183642566AECA004FD5BA /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D2614252523C400A2BA57 /* QuizVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -290,7 +290,6 @@
 			files = (
 				ECDD96552548CE72007606B2 /* KMLabel.swift in Sources */,
 				EC198FB625253514006C34FF /* QuizManager.swift in Sources */,
-				EC4D2615252523C400A2BA57 /* QuizVC.swift in Sources */,
 				EC1C1B5A2542F74500DD9303 /* KMButton.swift in Sources */,
 				EC5C28862530A3D90040388B /* TopicTableVC.swift in Sources */,
 				EC312C7B25385EB600CCE885 /* QuizCell.swift in Sources */,
@@ -298,6 +297,7 @@
 				EC198FB225253463006C34FF /* Question.swift in Sources */,
 				EC1C1B542542F70000DD9303 /* KMAnswerTextField.swift in Sources */,
 				EC4D2611252523C400A2BA57 /* AppDelegate.swift in Sources */,
+				ECE183642566AECA004FD5BA /* QuizVC.swift in Sources */,
 				EC312C80253863ED00CCE885 /* K.swift in Sources */,
 				EC4D2613252523C400A2BA57 /* SceneDelegate.swift in Sources */,
 				EC1C1B4E2542F22000DD9303 /* UIViewControllerExtension.swift in Sources */,
@@ -452,6 +452,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 448SU55L83;
 				INFOPLIST_FILE = "Git Commander/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,6 +473,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 448SU55L83;
 				INFOPLIST_FILE = "Git Commander/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
