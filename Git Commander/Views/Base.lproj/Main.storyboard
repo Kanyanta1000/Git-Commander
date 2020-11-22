@@ -37,7 +37,7 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="dAZ-BR-yAo">
-                                            <rect key="frame" x="90" y="32.5" width="44.5" height="15"/>
+                                            <rect key="frame" x="90" y="32.5" width="264" height="15"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="15" id="KN7-tb-4vr"/>
                                             </constraints>
@@ -46,7 +46,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5v-N6-5vM">
-                                            <rect key="frame" x="90" y="52.5" width="37" height="15"/>
+                                            <rect key="frame" x="90" y="52.5" width="264" height="15"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="15" id="50q-3w-SXL"/>
                                             </constraints>
@@ -63,11 +63,13 @@
                                         </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="mJz-Ao-AWk" firstAttribute="leading" secondItem="dAZ-BR-yAo" secondAttribute="trailing" constant="15" id="8GZ-gp-MuT"/>
                                         <constraint firstItem="mJz-Ao-AWk" firstAttribute="centerY" secondItem="cVf-VL-ES4" secondAttribute="centerY" id="DW8-Ho-P9R"/>
                                         <constraint firstItem="inH-H3-hQg" firstAttribute="centerY" secondItem="cVf-VL-ES4" secondAttribute="centerY" id="P5Q-Gc-4n8"/>
                                         <constraint firstItem="N5v-N6-5vM" firstAttribute="leading" secondItem="inH-H3-hQg" secondAttribute="trailing" constant="15" id="W3v-S0-Qqb"/>
                                         <constraint firstItem="dAZ-BR-yAo" firstAttribute="centerY" secondItem="cVf-VL-ES4" secondAttribute="centerY" constant="-5" id="hm2-Ya-Kk7"/>
                                         <constraint firstItem="N5v-N6-5vM" firstAttribute="centerY" secondItem="cVf-VL-ES4" secondAttribute="centerY" constant="15" id="htR-1D-EsS"/>
+                                        <constraint firstItem="mJz-Ao-AWk" firstAttribute="leading" secondItem="N5v-N6-5vM" secondAttribute="trailing" constant="15" id="j08-E7-BUZ"/>
                                         <constraint firstItem="inH-H3-hQg" firstAttribute="leading" secondItem="cVf-VL-ES4" secondAttribute="leading" constant="15" id="oMG-XW-uO6"/>
                                         <constraint firstAttribute="trailing" secondItem="mJz-Ao-AWk" secondAttribute="trailing" constant="15" id="pgo-ig-Obz"/>
                                         <constraint firstItem="dAZ-BR-yAo" firstAttribute="leading" secondItem="inH-H3-hQg" secondAttribute="trailing" constant="15" id="wb2-5R-M9d"/>

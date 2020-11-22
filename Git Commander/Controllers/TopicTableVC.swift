@@ -101,8 +101,11 @@ class TopicTableVC: UITableViewController {
     func setUpUI() {
         
         tableView.backgroundView = UIImageView(image: UIImage(named: K.bgImage))
+        tableView.backgroundView?.layer.borderWidth = 1
+        tableView.backgroundView?.layer.borderColor = UIColor(named: K.Colors.darkPrimary)?.cgColor
         navigationItem.title = K.quizListTitle
-        tableView.tableFooterView = UIView(frame: .zero)
+        tableView.separatorColor = UIColor.clear
+//        tableView.tableFooterView = UIView()
         
 //        animateTableCells()
     }

@@ -12,8 +12,10 @@ extension UIViewController {
     func setBackGround(bgImageView: UIImageView) {
         view.addSubview(bgImageView)
         view.sendSubviewToBack(bgImageView)
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor(named: K.Colors.darkPrimary)?.cgColor
+
         bgImageView.translatesAutoresizingMaskIntoConstraints = false
-        
         bgImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         bgImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         bgImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true

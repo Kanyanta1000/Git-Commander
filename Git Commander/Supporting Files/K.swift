@@ -32,6 +32,7 @@ struct K {
     static var reposIcon            = "externaldrive.badge.icloud"
     static var noIcon               = "nosign"
     static var starredIcon          = "star.fill"
+    static var xmark                = "xmark.circle"
     
     struct Colors {
         static var accentColor      = ""

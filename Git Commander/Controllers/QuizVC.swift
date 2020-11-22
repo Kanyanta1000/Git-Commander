@@ -22,7 +22,6 @@ class QuizVC: UIViewController {
     @IBOutlet weak var starButton: UIButton!
     @IBOutlet weak var hintButton: UIButton!
     
-    
     var currentQuiz: Quiz! {
         didSet {
             quizManager.quiz = currentQuiz
@@ -36,22 +35,33 @@ class QuizVC: UIViewController {
         super.viewDidLoad()
         
         answerTextField.delegate = self
+        // answerTextField.becomeFirstResponder()
+        answerTextField.autocorrectionType = .no
+        addDoneButton()
         
-//         Listening for keyboard events
-                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        // Listening for keyboard events
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
         self.setBackGround(bgImageView: bgImageView)    //programmatically setting bg from uiview extension
         navigationItem.title = currentQuiz?.title
         updateUI()
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
+            swipeRight.direction = .right
+            self.view.addGestureRecognizer(swipeRight)
+
+            let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
+            swipeDown.direction = .left
+            self.view.addGestureRecognizer(swipeDown)
     }
     
-        deinit {
-            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
     
     @IBAction func previousPressed(_ sender: UIButton) {
         quizManager.decrementQuestionNumber()
@@ -76,7 +86,8 @@ class QuizVC: UIViewController {
         if answerCorrect {
             sender.pulsate()
             sender.tintColor = UIColor.init(named: K.Colors.green)
-            quizManager.incrementQuestionNumber()
+            quizQuestionPageController.pageIndicatorTintColor = UIColor(named: K.Colors.green)
+//            quizManager.incrementQuestionNumber()
             
         } else {
             sender.shake()
@@ -134,28 +145,76 @@ class QuizVC: UIViewController {
         answerTextField.text = ""
         setStar()
     }
+    
+    
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+
+            switch swipeGesture.direction {
+            case .right:
+                previousPressed(previousButton)
+            
+            case .left:
+                nextPressed(nextQuestionButton)
+            
+            default:
+                break
+            }
+        }
+    }
 }
 
 extension QuizVC: UITextFieldDelegate {
-   
+    
+    
     @objc func keyboardWillChange(notification: Notification) {
-        print("Keyboard will show: \(notification.name.rawValue)")
         
         var topbarHeight: CGFloat {
-                return (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0) +
-                    (self.navigationController?.navigationBar.frame.height ?? 0.0)
-            }
-
-        if notification.name == UIResponder.keyboardWillShowNotification {
-            view.frame.origin.y = topbarHeight - 60
+            return (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0) +
+                (self.navigationController?.navigationBar.frame.height ?? 0.0)
+        }
+        
+        if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification {
+            view.frame.origin.y = topbarHeight - 100
             
         } else {
-            
             view.frame.origin.y = topbarHeight
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        checkPressed(checkAnswerButton)
+        hideKeyboard()
+        
+        return true
+    }
+    
     func hideKeyboard() {
         answerTextField.resignFirstResponder()
+    }
+    
+    func addDoneButton() {
+        
+        let toolBar = UIToolbar()
+        
+        toolBar.sizeToFit()
+        toolBar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
+        toolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        
+        let doneButton = UIBarButtonItem(image: UIImage(systemName: K.xmark), style: .plain, target: self, action: #selector(self.doneClicked))
+        
+        doneButton.tintColor = UIColor(named: K.Colors.textAndIcons)
+        
+        toolBar.setItems([flexibleSpace, doneButton], animated: false)
+        
+        answerTextField.inputAccessoryView = toolBar
+        
+    }
+    
+    @objc func doneClicked() {
+        view.endEditing(true)
     }
 }

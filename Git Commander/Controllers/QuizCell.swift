@@ -46,6 +46,13 @@ class QuizCell: UITableViewCell {
         disclosureIndicator.setImage(rightArrow, for: .normal)
         disclosureIndicator.tintColor = iconColor
         disclosureIndicator.isUserInteractionEnabled = false
+        
+        
+        let bottomBorder = CALayer()
+
+        bottomBorder.frame = CGRect(x: 90, y: 89, width: self.contentView.frame.size.width, height: 0.4)
+        bottomBorder.backgroundColor = UIColor(named: K.Colors.textAndIcons)?.cgColor
+        self.contentView.layer.addSublayer(bottomBorder)
     }
 }
 
